@@ -24,23 +24,29 @@ public class Material {
         this.nombre = nombre;
     }
 
-    public String getdescripcion() {
+    public String getDescripcion() {
         return descripcion;
     }
 
-    public void setdescripcion(String direccion) {
-        this.descripcion = direccion;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public int getnumeroDeSerie() {
-        return numeroDeSerie;
+        return numeroDeSerie;   
     }
 
-    public void setnumeroDeSerieId(int id) {
+    public void setnumeroDeSerieId(int numeroDeSerie) {
         this.numeroDeSerie = numeroDeSerie;
     }
 
- 
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
 
    
      
