@@ -32,11 +32,11 @@ public class Material {
         this.descripcion = descripcion;
     }
 
-    public int getnumeroDeSerie() {
+    public int getNumeroDeSerie() {
         return numeroDeSerie;   
     }
 
-    public void setnumeroDeSerieId(int numeroDeSerie) {
+    public void setNumeroDeSerie(int numeroDeSerie) {
         this.numeroDeSerie = numeroDeSerie;
     }
 
