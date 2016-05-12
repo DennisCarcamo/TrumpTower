@@ -9,7 +9,7 @@ package torretromp_p1;
  *
  * @author Dennis
  */
-public class CatalogodeProductos {
+public class CatalogodeProductosTDA {
 
  
 }
