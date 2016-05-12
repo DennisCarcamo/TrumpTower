@@ -17,6 +17,7 @@ public class Material {
     }
 
     public String getNombre() {
+     
         return nombre;
     }
 
