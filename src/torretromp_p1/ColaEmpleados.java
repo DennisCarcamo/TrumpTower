@@ -7,9 +7,8 @@ package torretromp_p1;
 
 /**
  *
- * @author Dennis
+ * @author Dennis Joel Carcamos
  */
-public class CatalogodeProductosTDA {
-
- 
+public class ColaEmpleados {
+    
 }

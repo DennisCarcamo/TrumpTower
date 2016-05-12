@@ -1,6 +1,6 @@
 
 package torretromp_p1;
 
-public class InventariosTDA {
+public class MaterialesListaPilas {
     
 }
