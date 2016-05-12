@@ -8,7 +8,7 @@ public class Nodo {
     public Nodo() {
     }
 
-    public Nodo(Nodo next, int data) {
+    public Nodo(Nodo next, Object data) {
         this.next = next;
         this.data = data;
     }
