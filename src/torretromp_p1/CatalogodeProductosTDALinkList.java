@@ -37,7 +37,7 @@ public class CatalogodeProductosTDALinkList {
 
     public void insert(int position, Producto prod) {
         if (position == 0) {
-            Nodo temporal = new Nodo(null, prod);
+            Nodo temporal = new Nodo(null,null, prod);
             head = temporal;
         } else {
             Nodo headtemp = head;
@@ -45,7 +45,7 @@ public class CatalogodeProductosTDALinkList {
             while (headtemp.getNext() != null) {
                 contador++;
                 if (contador == position) {
-                    Nodo nodoinsertar = new Nodo(null, prod);
+                    Nodo nodoinsertar = new Nodo(null,null, prod);
                     nodoinsertar.setNext(headtemp.getNext());
                     headtemp.setNext(nodoinsertar);
                     break;

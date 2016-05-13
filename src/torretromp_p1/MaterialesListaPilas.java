@@ -1,49 +1,41 @@
-
 package torretromp_p1;
 
 public class MaterialesListaPilas {
-    
-    private class Nodo
-        {
-        private String elemento;
-        private Nodo siguiente;
-        }
-    private Nodo primero = null;
-    
-    
-    public boolean estaVacio()
-    {
-    return (primero == null);
+
+    Nodo head;
+    int size;
+
+    public Nodo top() {
+        return this.head;
     }
-    public void push(String s)
-    {
-    Nodo nodo= new Nodo();
-    nodo.elemento = s;
-    nodo.siguiente = primero;
-    primero = nodo;
+
+    public int size() {
+        return this.size;
     }
-    public String pop(){
-    
-    if (primero == null )
-    
-        throw new RuntimeException("pila esta vacia");
-    
-    String resultado = primero.elemento;
-    primero = primero.siguiente;
-    return resultado;
+
+    public Material pop() {
+        Nodo temporal = this.head;
+        head = head.getNext();
+        return (Material) temporal.getData();
     }
-    
-    public String toSting()
-    {
-        String resultado = "";
-        Nodo este = primero;
-        while (este != null)
-        {
-            resultado += este.elemento + "";
-            este = este.siguiente;
-            
-        } 
-        return resultado;
-   
-    }       
+
+    public void push(Material material) {
+        Nodo nuevonodo = new Nodo(null, null, material);
+        nuevonodo.setPila(head);
+        head = nuevonodo;
+    }
+
+    public boolean isempty() {
+        return head != null;
+    }
+
+    public int getsize() {
+        return size;
+    }
+
+    public Material peek() {
+        Material retorno = (Material) head.getData();
+        return retorno;
+    }
+
 }

@@ -9,7 +9,7 @@ public class LineaDeEnsablajeTDAcola {
         this.head=newhead;
     }*/
     public void Queue(Empleado empleado) {
-        Nodo nodonuevo = new Nodo(null, empleado);
+        Nodo nodonuevo = new Nodo(null, null, empleado);
         if (head == null) {
             head = nodonuevo;
             this.size++;

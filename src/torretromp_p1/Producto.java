@@ -32,7 +32,7 @@ public class Producto {
 
     public void insert(int position, Material value) {
         if (position == 0) {
-            Nodo temporal = new Nodo(null, value);
+            Nodo temporal = new Nodo(null,null,value);
             headlistademateriales = temporal;
         } else {
             Nodo headtemp = headlistademateriales;
@@ -40,7 +40,7 @@ public class Producto {
             while (headtemp.getNext() != null) {
                 contador++;
                 if (contador == position) {
-                    Nodo nodoinsertar = new Nodo(null, value);
+                    Nodo nodoinsertar = new Nodo(null,null, value);
                     nodoinsertar.setNext(headtemp.getNext());
                     headtemp.setNext(nodoinsertar);
                     break;
