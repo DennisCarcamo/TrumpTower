@@ -56,7 +56,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tablamaterialver = new javax.swing.JTable();
         Panel_Producto = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         Panel_empleados = new javax.swing.JPanel();
@@ -166,6 +166,12 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Agregar Nuevo Material", jPanel2);
 
+        jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel3MouseClicked(evt);
+            }
+        });
+
         tabla_eliminarmateriales.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -192,6 +198,11 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane2.setViewportView(tabla_eliminarmateriales);
 
         btn_eliminarmaterial.setText("Eliminar Material");
+        btn_eliminarmaterial.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_eliminarmaterialMouseClicked(evt);
+            }
+        });
 
         jLabel10.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -293,7 +304,6 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(4, 4, 4)))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Tf_nombrematerialmodif, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
@@ -320,7 +330,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("Inventario General");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tablamaterialver.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -343,7 +353,7 @@ public class Principal extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane4.setViewportView(jTable2);
+        jScrollPane4.setViewportView(tablamaterialver);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -498,12 +508,12 @@ public class Principal extends javax.swing.JFrame {
         if (listamateriales.head != null) {
             System.out.println("si hay algo");
             Nodo temporallista = listamateriales.head;
-            System.out.println("tamano lista materiales"+listamateriales.size);
+            System.out.println("tamano lista materiales" + listamateriales.size);
             while (temporallista.getNext() != null) {
                 contador++;
                 temporallista = temporallista.getNext();
             }
-            System.out.println("tamano lista materiales"+contador);
+            System.out.println("tamano lista materiales" + contador);
             temporallista = listamateriales.head;
             for (int i = 0; i <= contador; i++) {
                 datos[0] = ((Material) temporallista.getData()).getNumeroDeSerie();
@@ -574,6 +584,91 @@ public class Principal extends javax.swing.JFrame {
             labelerroragregarmaterial.setText("Hay campos vacios");
         }
     }//GEN-LAST:event_jButton1MouseClicked
+    private void refrescartablamaterialeliminar() {
+        this.modelotablaaeliminar = new DefaultTableModel();
+        /* this.tabla_eliminarmateriales.getModel();*/
+        Object datos[] = new Object[4];
+        modelotablaaeliminar.addColumn("Numero de Serie");
+        modelotablaaeliminar.addColumn("Material");
+        modelotablaaeliminar.addColumn("Descripcion");
+        modelotablaaeliminar.addColumn("Marca");
+        int contador = 0;
+        if (listamateriales.getHead() != null) {
+            Nodo temporallista = listamateriales.getHead();
+            while (temporallista.getNext() != null) {
+                contador++;
+                temporallista = temporallista.getNext();
+            }
+            temporallista = listamateriales.getHead();
+            for (int i = 0; i <= contador; i++) {
+                datos[0] = ((Material) temporallista.getData()).getNumeroDeSerie();
+                datos[1] = ((Material) temporallista.getData()).getNombre();
+                datos[2] = ((Material) temporallista.getData()).getDescripcion();
+                datos[3] = ((Material) temporallista.getData()).getMarca();
+                this.modelotablaaeliminar.addRow(datos);
+                temporallista = temporallista.getNext();
+            }
+            this.tabla_eliminarmateriales.setModel(modelotablaaeliminar);
+        } else {
+        }
+
+    }
+
+    private void refrescartablamaverproducto() {
+        this.modelotablaaeliminar = new DefaultTableModel();
+        /* this.tabla_eliminarmateriales.getModel();*/
+        Object datos[] = new Object[4];
+        modelotablaaeliminar.addColumn("Numero de Serie");
+        modelotablaaeliminar.addColumn("Material");
+        modelotablaaeliminar.addColumn("Descripcion");
+        modelotablaaeliminar.addColumn("Marca");
+        int contador = 0;
+        if (listamateriales.getHead() != null) {
+            Nodo temporallista = listamateriales.getHead();
+            while (temporallista.getNext() != null) {
+                contador++;
+                temporallista = temporallista.getNext();
+            }
+            temporallista = listamateriales.getHead();
+            for (int i = 0; i <= contador; i++) {
+                datos[0] = ((Material) temporallista.getData()).getNumeroDeSerie();
+                datos[1] = ((Material) temporallista.getData()).getNombre();
+                datos[2] = ((Material) temporallista.getData()).getDescripcion();
+                datos[3] = ((Material) temporallista.getData()).getMarca();
+                this.modelotablaaeliminar.addRow(datos);
+                temporallista = temporallista.getNext();
+            }
+            this.tablamaterialver.setModel(modelotablaaeliminar);
+        } else {
+        }
+
+    }
+    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
+
+    }//GEN-LAST:event_jPanel3MouseClicked
+
+    private void btn_eliminarmaterialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_eliminarmaterialMouseClicked
+        int indicematerialeliminar = this.tabla_eliminarmateriales.getSelectedRow();
+        if (indicematerialeliminar >= 0) {
+            Nodo temporal = listamateriales.getHead();
+            int contador = -1;
+            while (temporal != null) {
+                contador++;
+                if (contador == indicematerialeliminar) {
+                    Nodo temporl = new Nodo();
+                    temporl.setNext(temporal.getNext());
+                    temporal.setNext(temporl.getNext());
+                    System.out.println("borrado");
+                    refrescartablamaterialeliminar();
+                    break;
+                }
+                temporal = temporal.getNext();
+
+            }
+        } else {
+
+        }
+    }//GEN-LAST:event_btn_eliminarmaterialMouseClicked
 
     /**
      * @param args the command line arguments
@@ -655,9 +750,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JLabel labelerroragregarmaterial;
     private javax.swing.JTable tabla_eliminarmateriales;
+    private javax.swing.JTable tablamaterialver;
     // End of variables declaration//GEN-END:variables
     MaterialesListaPilas listamateriales = new MaterialesListaPilas();
     ColaEmpleados colaempleados = new ColaEmpleados();
