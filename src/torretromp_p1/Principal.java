@@ -5,6 +5,8 @@
  */
 package torretromp_p1;
 
+import java.awt.Color;
+
 /**
  *
  * @author Dennis
@@ -16,7 +18,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
-         System.out.println("suma");
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -28,21 +30,159 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        Ventana_Materiales = new javax.swing.JDialog();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        Panel_Producto = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        Panel_empleados = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        Panel_mterial = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        Panel_lineaEnsablaje = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 579, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 419, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 433, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 312, Short.MAX_VALUE)
         );
+
+        jTabbedPane1.addTab("tab1", jPanel1);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 419, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 312, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("tab2", jPanel2);
+
+        javax.swing.GroupLayout Ventana_MaterialesLayout = new javax.swing.GroupLayout(Ventana_Materiales.getContentPane());
+        Ventana_Materiales.getContentPane().setLayout(Ventana_MaterialesLayout);
+        Ventana_MaterialesLayout.setHorizontalGroup(
+            Ventana_MaterialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        Ventana_MaterialesLayout.setVerticalGroup(
+            Ventana_MaterialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane1)
+        );
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setName("Principal"); // NOI18N
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setText("Productos");
+
+        javax.swing.GroupLayout Panel_ProductoLayout = new javax.swing.GroupLayout(Panel_Producto);
+        Panel_Producto.setLayout(Panel_ProductoLayout);
+        Panel_ProductoLayout.setHorizontalGroup(
+            Panel_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_ProductoLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        Panel_ProductoLayout.setVerticalGroup(
+            Panel_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_ProductoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(Panel_Producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 130, 110, -1));
+
+        jLabel3.setText("Empleados");
+
+        javax.swing.GroupLayout Panel_empleadosLayout = new javax.swing.GroupLayout(Panel_empleados);
+        Panel_empleados.setLayout(Panel_empleadosLayout);
+        Panel_empleadosLayout.setHorizontalGroup(
+            Panel_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_empleadosLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel3)
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+        Panel_empleadosLayout.setVerticalGroup(
+            Panel_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_empleadosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(Panel_empleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 130, -1, -1));
+
+        Panel_mterial.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Panel_mterialMouseClicked(evt);
+            }
+        });
+
+        jLabel4.setText("Materiales");
+
+        javax.swing.GroupLayout Panel_mterialLayout = new javax.swing.GroupLayout(Panel_mterial);
+        Panel_mterial.setLayout(Panel_mterialLayout);
+        Panel_mterialLayout.setHorizontalGroup(
+            Panel_mterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_mterialLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        Panel_mterialLayout.setVerticalGroup(
+            Panel_mterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_mterialLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(Panel_mterial, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, 110, -1));
+
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Linea de Ensamblaje");
+
+        javax.swing.GroupLayout Panel_lineaEnsablajeLayout = new javax.swing.GroupLayout(Panel_lineaEnsablaje);
+        Panel_lineaEnsablaje.setLayout(Panel_lineaEnsablajeLayout);
+        Panel_lineaEnsablajeLayout.setHorizontalGroup(
+            Panel_lineaEnsablajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+        );
+        Panel_lineaEnsablajeLayout.setVerticalGroup(
+            Panel_lineaEnsablajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_lineaEnsablajeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(Panel_lineaEnsablaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 130, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/torretromp_p1/45.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 630));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Panel_mterialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_mterialMouseClicked
+      
+    }//GEN-LAST:event_Panel_mterialMouseClicked
 
     /**
      * @param args the command line arguments
@@ -55,7 +195,7 @@ public class Principal extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("DarkMetal".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -80,5 +220,18 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Panel_Producto;
+    private javax.swing.JPanel Panel_empleados;
+    private javax.swing.JPanel Panel_lineaEnsablaje;
+    private javax.swing.JPanel Panel_mterial;
+    private javax.swing.JDialog Ventana_Materiales;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }
