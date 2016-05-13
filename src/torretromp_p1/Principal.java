@@ -105,7 +105,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(Panel_Producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 130, 110, -1));
+        getContentPane().add(Panel_Producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 110, -1));
 
         jLabel3.setText("Empleados");
 
@@ -126,7 +126,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(Panel_empleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 130, -1, -1));
+        getContentPane().add(Panel_empleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, -1, -1));
 
         Panel_mterial.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -168,11 +168,11 @@ public class Principal extends javax.swing.JFrame {
             Panel_lineaEnsablajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_lineaEnsablajeLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(Panel_lineaEnsablaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 130, -1, -1));
+        getContentPane().add(Panel_lineaEnsablaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 130, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/torretromp_p1/45.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 630));
