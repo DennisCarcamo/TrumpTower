@@ -5,16 +5,12 @@ public class ColaEmpleados {
     Nodo head;
     int size = 0;
 
-    /*  public void setHead(Nodo newhead){
-        this.head=newhead;
-    }*/
-    public void Queue(Empleado empleado) {
-        Nodo nodonuevo = new Nodo(null, null, empleado);
+    public void Queue(Nodo nodonuevo) {//mete un nodo
+
         if (head == null) {
             head = nodonuevo;
             this.size++;
         } else {
-            int contador = -1;
             Nodo temporal = head;
             while (temporal.getNext() != null) {
                 temporal = temporal.getNext();
@@ -24,7 +20,7 @@ public class ColaEmpleados {
         }
     }
 
-    public Nodo DeQueue() {
+    public Nodo DeQueue() {//saca el head
         Nodo temporal = head;
         if (head.getNext() != null) {
             head = head.getNext();
@@ -34,9 +30,9 @@ public class ColaEmpleados {
 
     }
 
-    public Empleado Peek() {
+    public Nodo Peek() {//muestra un  nodo
         Object empleadoObject = this.head.getData();
-        Empleado empleado = (Empleado) empleadoObject;
+        Nodo empleado = (Nodo) empleadoObject;
         return empleado;
     }
 

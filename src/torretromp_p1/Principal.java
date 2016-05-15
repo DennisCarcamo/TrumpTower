@@ -2,10 +2,11 @@ package torretromp_p1;
 
 import java.awt.Color;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class Principal extends javax.swing.JFrame {
-
+    
     public Principal() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -22,11 +23,31 @@ public class Principal extends javax.swing.JFrame {
 
         Ventana_Materiales = new javax.swing.JDialog();
         PaneldePaneles = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tablamaterialver = new javax.swing.JTable();
+        jLabel20 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        labelerroragregarmaterial = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        Tf_Numseriematerial = new javax.swing.JTextField();
+        Tf_marcamaterial = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        Ta_descripcionmaterial = new javax.swing.JTextArea();
+        Tf_nombrematerial = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabla_eliminarmateriales = new javax.swing.JTable();
         btn_eliminarmaterial = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         Cb_materialamodificar = new javax.swing.JComboBox<>();
@@ -41,23 +62,50 @@ public class Principal extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        tablamaterialver = new javax.swing.JTable();
-        jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        labelerroragregarmaterial = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        Tf_Numseriematerial = new javax.swing.JTextField();
-        Tf_marcamaterial = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        Ta_descripcionmaterial = new javax.swing.JTextArea();
-        Tf_nombrematerial = new javax.swing.JTextField();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        Vnetana_Empleados = new javax.swing.JDialog();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        Tabla_empleadosver = new javax.swing.JTable();
+        jLabel41 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        tf_nombreempleados = new javax.swing.JTextField();
+        tf_identidadempleados = new javax.swing.JTextField();
+        tf_direccionempleados = new javax.swing.JTextField();
+        tf_salarioempleado = new javax.swing.JTextField();
+        tf_edadempleados = new javax.swing.JTextField();
+        bt_agregarempleado = new javax.swing.JToggleButton();
+        jLabel40 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel29 = new javax.swing.JLabel();
+        tf_salarioempleadomodif = new javax.swing.JTextField();
+        tf_edadempleadomodif = new javax.swing.JTextField();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        tf_identidadempleadomodif = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        tf_direccionempleadomodif = new javax.swing.JTextField();
+        tf_nombreempleadomodif = new javax.swing.JTextField();
+        jLabel34 = new javax.swing.JLabel();
+        jToggleButton2 = new javax.swing.JToggleButton();
+        cb_modficarempleado = new javax.swing.JComboBox<>();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel37 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        ta_eliminarempleados = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
+        jLabel39 = new javax.swing.JLabel();
         Panel_Producto = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         Panel_empleados = new javax.swing.JPanel();
@@ -69,9 +117,10 @@ public class Principal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         Ventana_Materiales.setTitle("Materiales");
-        Ventana_Materiales.setBackground(new java.awt.Color(102, 102, 102));
+        Ventana_Materiales.setBackground(new java.awt.Color(255, 255, 0));
         Ventana_Materiales.setResizable(false);
 
+        PaneldePaneles.setBackground(new java.awt.Color(255, 204, 0));
         PaneldePaneles.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 PaneldePanelesStateChanged(evt);
@@ -83,177 +132,14 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel3MouseClicked(evt);
-            }
-        });
-
-        tabla_eliminarmateriales.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Numero de Serie", "Material", "Descripcion", "Marca"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane2.setViewportView(tabla_eliminarmateriales);
-
-        btn_eliminarmaterial.setText("Eliminar Material");
-        btn_eliminarmaterial.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_eliminarmaterialMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_eliminarmaterialMouseEntered(evt);
-            }
-        });
-
-        jLabel10.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("Eliminar Materiales");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(223, 223, 223)
-                        .addComponent(btn_eliminarmaterial)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel10)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btn_eliminarmaterial)
-                .addContainerGap(142, Short.MAX_VALUE))
-        );
-
-        PaneldePaneles.addTab("Eliminar Material", jPanel3);
-
-        jLabel12.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("Reestablecer Valores");
-
-        Cb_materialamodificar.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                Cb_materialamodificarItemStateChanged(evt);
-            }
-        });
-
-        jLabel14.setText("Material ");
-
-        Ta_descripcionmaterialmodif.setColumns(20);
-        Ta_descripcionmaterialmodif.setRows(5);
-        jScrollPane1.setViewportView(Ta_descripcionmaterialmodif);
-
-        jLabel9.setText("Numero de Serie");
-
-        jLabel8.setText("Marca");
-
-        jLabel7.setText("Decripcion");
-
-        jLabel6.setText("Nombre");
-
-        jButton3.setText("Restablecer");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(105, 105, 105)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Tf_Numseriematerialmodif)
-                            .addComponent(Tf_marcamaterialmodif)
-                            .addComponent(jScrollPane1)))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(43, 43, 43)
-                                .addComponent(jLabel6))
-                            .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Cb_materialamodificar, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Tf_nombrematerialmodif, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addGap(253, 253, 253))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel12)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Cb_materialamodificar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(4, 4, 4)))
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Tf_nombrematerialmodif, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Tf_marcamaterialmodif, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addGap(6, 6, 6)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Tf_Numseriematerialmodif, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3)
-                .addContainerGap(128, Short.MAX_VALUE))
-        );
-
-        PaneldePaneles.addTab("Modificar Materiales", jPanel4);
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel13.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("Inventario General");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 605, -1));
 
+        tablamaterialver.setBackground(new java.awt.Color(204, 255, 102));
         tablamaterialver.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -279,27 +165,15 @@ public class Principal extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(tablamaterialver);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel13)
-                .addGap(31, 31, 31)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(179, Short.MAX_VALUE))
-        );
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 481, 150));
+
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/torretromp_p1/1.jpg"))); // NOI18N
+        jLabel20.setText(" ");
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 600, 380));
 
         PaneldePaneles.addTab("Ver Materiales", jPanel1);
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("Agregar");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -307,108 +181,379 @@ public class Principal extends javax.swing.JFrame {
                 jButton1MouseClicked(evt);
             }
         });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, -1, -1));
 
         labelerroragregarmaterial.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
         labelerroragregarmaterial.setForeground(new java.awt.Color(255, 0, 0));
         labelerroragregarmaterial.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel2.add(labelerroragregarmaterial, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 163, 10));
 
         jLabel11.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("Agregar Material");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 18, 584, -1));
+        jPanel2.add(Tf_Numseriematerial, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 248, 163, -1));
+        jPanel2.add(Tf_marcamaterial, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 211, 163, -1));
 
+        jLabel15.setFont(new java.awt.Font("Agency FB", 0, 14)); // NOI18N
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel15.setText("Marca");
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 211, 97, -1));
 
+        jLabel16.setFont(new java.awt.Font("Agency FB", 0, 14)); // NOI18N
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel16.setText("Numero de Serie");
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 248, 97, -1));
 
         Ta_descripcionmaterial.setColumns(20);
         Ta_descripcionmaterial.setRows(5);
         jScrollPane3.setViewportView(Ta_descripcionmaterial);
 
+        jPanel2.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 115, -1, -1));
+        jPanel2.add(Tf_nombrematerial, new org.netbeans.lib.awtextra.AbsoluteConstraints(226, 78, 163, -1));
+
+        jLabel17.setFont(new java.awt.Font("Agency FB", 0, 14)); // NOI18N
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel17.setText("Nombre");
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 78, 97, -1));
 
+        jLabel18.setFont(new java.awt.Font("Agency FB", 0, 14)); // NOI18N
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel18.setText("Decripcion");
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(111, 115, 97, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 584, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(220, 220, 220)
-                        .addComponent(labelerroragregarmaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(260, 260, 260)
-                        .addComponent(jButton1))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(jLabel18))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGap(170, 170, 170)
-                            .addComponent(jLabel17)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Tf_nombrematerial, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                            .addGap(128, 128, 128)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Tf_Numseriematerial, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Tf_marcamaterial, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(6, 6, 6))
-        );
-
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {Tf_Numseriematerial, jLabel16});
-
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel11)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addComponent(jLabel17))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(Tf_nombrematerial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(7, 7, 7)
-                .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Tf_marcamaterial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15))
-                .addGap(25, 25, 25)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Tf_Numseriematerial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11)
-                .addComponent(labelerroragregarmaterial, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addGap(18, 18, 18))
-        );
-
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {Tf_Numseriematerial, jLabel16});
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/torretromp_p1/1.jpg"))); // NOI18N
+        jLabel23.setText(" ");
+        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 600, 380));
 
         PaneldePaneles.addTab("Agregar Nuevo Material", jPanel2);
+
+        jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel3MouseClicked(evt);
+            }
+        });
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tabla_eliminarmateriales.setBackground(new java.awt.Color(204, 255, 102));
+        tabla_eliminarmateriales.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Numero de Serie", "Material", "Descripcion", "Marca"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tabla_eliminarmateriales);
+
+        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 71, 481, 154));
+
+        btn_eliminarmaterial.setText("Eliminar Material");
+        btn_eliminarmaterial.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_eliminarmaterialMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_eliminarmaterialMouseEntered(evt);
+            }
+        });
+        jPanel3.add(btn_eliminarmaterial, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 243, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Eliminar Materiales");
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 24, 605, -1));
+
+        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/torretromp_p1/1.jpg"))); // NOI18N
+        jLabel24.setText(" ");
+        jPanel3.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 600, 380));
+
+        PaneldePaneles.addTab("Eliminar Material", jPanel3);
+
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel12.setFont(new java.awt.Font("Agency FB", 1, 24)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("Reestablecer Valores");
+        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 21, 605, -1));
+
+        Cb_materialamodificar.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                Cb_materialamodificarItemStateChanged(evt);
+            }
+        });
+        jPanel4.add(Cb_materialamodificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(194, 68, 200, -1));
+
+        jLabel14.setFont(new java.awt.Font("Agency FB", 0, 12)); // NOI18N
+        jLabel14.setText("Material ");
+        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(145, 68, -1, 20));
+        jPanel4.add(Tf_nombrematerialmodif, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 181, -1));
+
+        Ta_descripcionmaterialmodif.setColumns(20);
+        Ta_descripcionmaterialmodif.setRows(5);
+        jScrollPane1.setViewportView(Ta_descripcionmaterialmodif);
+
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 181, 60));
+        jPanel4.add(Tf_marcamaterialmodif, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 181, -1));
+        jPanel4.add(Tf_Numseriematerialmodif, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 181, -1));
+
+        jLabel9.setFont(new java.awt.Font("Agency FB", 0, 12)); // NOI18N
+        jLabel9.setText("Numero de Serie");
+        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Agency FB", 0, 12)); // NOI18N
+        jLabel8.setText("Marca");
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Agency FB", 0, 12)); // NOI18N
+        jLabel7.setText("Decripcion");
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Agency FB", 0, 12)); // NOI18N
+        jLabel6.setText("Nombre");
+        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, -1, -1));
+
+        jButton3.setText("Restablecer");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+        jPanel4.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, -1, -1));
+
+        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/torretromp_p1/1.jpg"))); // NOI18N
+        jLabel26.setText(" ");
+        jPanel4.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 600, 380));
+
+        PaneldePaneles.addTab("Modificar Materiales", jPanel4);
 
         javax.swing.GroupLayout Ventana_MaterialesLayout = new javax.swing.GroupLayout(Ventana_Materiales.getContentPane());
         Ventana_Materiales.getContentPane().setLayout(Ventana_MaterialesLayout);
         Ventana_MaterialesLayout.setHorizontalGroup(
             Ventana_MaterialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PaneldePaneles)
+            .addComponent(PaneldePaneles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         Ventana_MaterialesLayout.setVerticalGroup(
             Ventana_MaterialesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(PaneldePaneles)
+        );
+
+        Vnetana_Empleados.setBackground(new java.awt.Color(102, 102, 0));
+        Vnetana_Empleados.setResizable(false);
+
+        jTabbedPane1.setBackground(new java.awt.Color(102, 102, 0));
+        jTabbedPane1.setName("Empleados"); // NOI18N
+
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel35.setFont(new java.awt.Font("Agency FB", 0, 24)); // NOI18N
+        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel35.setText("Ver Empleados");
+        jPanel5.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 31, 501, 42));
+
+        Tabla_empleadosver.setBackground(new java.awt.Color(102, 255, 255));
+        Tabla_empleadosver.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Nombre", "Direccion", "Edad", "Salario"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane5.setViewportView(Tabla_empleadosver);
+
+        jPanel5.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 107, -1, 140));
+
+        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/torretromp_p1/1.jpg"))); // NOI18N
+        jPanel5.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 500, 370));
+
+        jTabbedPane1.addTab("Ver Empleados", jPanel5);
+
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel19.setFont(new java.awt.Font("Agency FB", 0, 24)); // NOI18N
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setText("Agregar Empleados");
+        jPanel6.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 21, 501, 42));
+
+        jLabel21.setFont(new java.awt.Font("Agency FB", 0, 14)); // NOI18N
+        jLabel21.setText("Nombre");
+        jPanel6.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 81, -1, 19));
+
+        jLabel22.setFont(new java.awt.Font("Agency FB", 0, 14)); // NOI18N
+        jLabel22.setText("Direccion");
+        jPanel6.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 119, -1, 19));
+
+        jLabel25.setFont(new java.awt.Font("Agency FB", 0, 14)); // NOI18N
+        jLabel25.setText("Identidad");
+        jPanel6.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 157, -1, 19));
+
+        jLabel27.setFont(new java.awt.Font("Agency FB", 0, 14)); // NOI18N
+        jLabel27.setText("Edad");
+        jPanel6.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 195, 29, 19));
+
+        jLabel28.setFont(new java.awt.Font("Agency FB", 0, 14)); // NOI18N
+        jLabel28.setText("Salario");
+        jPanel6.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 232, -1, 19));
+
+        tf_nombreempleados.setText("      ");
+        jPanel6.add(tf_nombreempleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 82, 226, -1));
+
+        tf_identidadempleados.setText("      ");
+        jPanel6.add(tf_identidadempleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 158, 226, -1));
+
+        tf_direccionempleados.setText("      ");
+        jPanel6.add(tf_direccionempleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 120, 226, -1));
+
+        tf_salarioempleado.setText("      ");
+        jPanel6.add(tf_salarioempleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 233, 89, -1));
+
+        tf_edadempleados.setText(" ");
+        jPanel6.add(tf_edadempleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 195, 43, -1));
+
+        bt_agregarempleado.setText("Agregar");
+        bt_agregarempleado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_agregarempleadoMouseClicked(evt);
+            }
+        });
+        jPanel6.add(bt_agregarempleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 287, -1, -1));
+
+        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/torretromp_p1/1.jpg"))); // NOI18N
+        jPanel6.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 500, 370));
+
+        jTabbedPane1.addTab("Agregar Empleados", jPanel6);
+
+        jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel29.setFont(new java.awt.Font("Agency FB", 0, 24)); // NOI18N
+        jLabel29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel29.setText("Modificar Datos");
+        jPanel7.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 21, 501, 42));
+
+        tf_salarioempleadomodif.setText("      ");
+        jPanel7.add(tf_salarioempleadomodif, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 259, 89, -1));
+
+        tf_edadempleadomodif.setText(" ");
+        jPanel7.add(tf_edadempleadomodif, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 222, 43, -1));
+
+        jLabel30.setFont(new java.awt.Font("Agency FB", 0, 14)); // NOI18N
+        jLabel30.setText("Salario");
+        jPanel7.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 259, -1, -1));
+
+        jLabel31.setFont(new java.awt.Font("Agency FB", 0, 14)); // NOI18N
+        jLabel31.setText("Edad");
+        jPanel7.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 222, 29, -1));
+
+        tf_identidadempleadomodif.setText("      ");
+        jPanel7.add(tf_identidadempleadomodif, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 185, 218, -1));
+
+        jLabel32.setFont(new java.awt.Font("Agency FB", 0, 14)); // NOI18N
+        jLabel32.setText("Identidad");
+        jPanel7.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 185, 49, -1));
+
+        jLabel33.setFont(new java.awt.Font("Agency FB", 0, 14)); // NOI18N
+        jLabel33.setText("Direccion");
+        jPanel7.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 148, -1, -1));
+
+        tf_direccionempleadomodif.setText("      ");
+        jPanel7.add(tf_direccionempleadomodif, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 148, 226, -1));
+
+        tf_nombreempleadomodif.setText("      ");
+        jPanel7.add(tf_nombreempleadomodif, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 111, 226, -1));
+
+        jLabel34.setFont(new java.awt.Font("Agency FB", 0, 14)); // NOI18N
+        jLabel34.setText("Nombre");
+        jPanel7.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 111, -1, -1));
+
+        jToggleButton2.setText("Aceptar");
+        jPanel7.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 284, -1, -1));
+
+        jPanel7.add(cb_modficarempleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 75, 226, -1));
+
+        jLabel36.setFont(new java.awt.Font("Agency FB", 0, 14)); // NOI18N
+        jLabel36.setText("Empleado");
+        jPanel7.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(98, 78, -1, -1));
+
+        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/torretromp_p1/1.jpg"))); // NOI18N
+        jPanel7.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 500, 370));
+
+        jTabbedPane1.addTab("Modificar Datos", jPanel7);
+
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel37.setFont(new java.awt.Font("Agency FB", 0, 24)); // NOI18N
+        jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel37.setText("Eliminar Empleados");
+        jPanel8.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 31, 501, 42));
+
+        ta_eliminarempleados.setBackground(new java.awt.Color(102, 204, 255));
+        ta_eliminarempleados.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Nombre", "Direccion", "Edad", "Salario"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane6.setViewportView(ta_eliminarempleados);
+
+        jPanel8.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 102, -1, 133));
+
+        jButton2.setText("Eliminar Empleado");
+        jPanel8.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(181, 251, -1, -1));
+
+        jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/torretromp_p1/1.jpg"))); // NOI18N
+        jPanel8.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 500, 370));
+
+        jTabbedPane1.addTab("Eliminar Empleados", jPanel8);
+
+        javax.swing.GroupLayout Vnetana_EmpleadosLayout = new javax.swing.GroupLayout(Vnetana_Empleados.getContentPane());
+        Vnetana_Empleados.getContentPane().setLayout(Vnetana_EmpleadosLayout);
+        Vnetana_EmpleadosLayout.setHorizontalGroup(
+            Vnetana_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane1)
+        );
+        Vnetana_EmpleadosLayout.setVerticalGroup(
+            Vnetana_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPane1)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -436,6 +581,12 @@ public class Principal extends javax.swing.JFrame {
         );
 
         getContentPane().add(Panel_Producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 110, -1));
+
+        Panel_empleados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Panel_empleadosMouseClicked(evt);
+            }
+        });
 
         jLabel3.setText("Empleados");
 
@@ -515,7 +666,7 @@ public class Principal extends javax.swing.JFrame {
         this.Ventana_Materiales.setLocationRelativeTo(this);
         //this.Ventana_Materiales.setModal();
         this.Ventana_Materiales.setVisible(true);
-
+        
 
     }//GEN-LAST:event_Panel_mterialMouseClicked
 
@@ -549,60 +700,77 @@ public class Principal extends javax.swing.JFrame {
             this.tabla_eliminarmateriales.setModel(modelotablaaeliminar);
         } else {
         }
-
+        
 
     }//GEN-LAST:event_PaneldePanelesMouseClicked
-
+    private void limpiaragregar() {
+        this.Tf_nombrematerial.setText("");
+        this.Ta_descripcionmaterial.setText("");
+        this.Tf_marcamaterial.setText("");
+        this.Tf_Numseriematerial.setText("");
+    }
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         String nombre, descripcion, marca;
         int numeroDeSerie;
-
+        
         if (!(this.Tf_nombrematerial.getText().equals("") || this.Ta_descripcionmaterial.getText().equals("")
                 || this.Tf_Numseriematerial.getText().equals("") || this.Tf_marcamaterial.getText().equals(""))) {
-
+            
             nombre = Tf_nombrematerial.getText();
             descripcion = Ta_descripcionmaterial.getText();
             marca = Tf_marcamaterial.getText();
-            numeroDeSerie = Integer.parseInt(this.Tf_Numseriematerial.getText());
-            Material materialnuevo = new Material(nombre, descripcion, marca, numeroDeSerie);
-            Nodo materialconnodo = new Nodo(null, null, materialnuevo);
-            Nodo temporallista = listamateriales.head;
-            if (temporallista == null) {
-                System.out.println("null");
-                listamateriales.head = materialconnodo;
-                System.out.println("agregado como cabeza de lista");
-            } else {
-
-                while (temporallista != null) {
-
-                    if (((Material) temporallista.getData()).getNombre().equals(((Material) materialconnodo.getData()).getNombre())) {
-
-                        if (temporallista.getPila() != null) {
-                            Nodo temporalpila = temporallista.getPila();
-                            materialconnodo.setPila(temporalpila);
-                            temporallista.setPila(materialconnodo);
-                            System.out.println("agregado nueva head de cabeza ya habian elementos");
-                            break;
-                        } else {
-                            temporallista.setPila(materialconnodo);
-                            System.out.println("agregado en cabeza principal de pilas no habian elementos pila");
-                            break;
+            try {
+                numeroDeSerie = Integer.parseInt(this.Tf_Numseriematerial.getText());
+                
+                Material materialnuevo = new Material(nombre, descripcion, marca, numeroDeSerie);
+                Nodo materialconnodo = new Nodo(null, null, materialnuevo);
+                Nodo temporallista = listamateriales.head;
+                if (temporallista == null) {
+                    
+                    System.out.println("null");
+                    listamateriales.head = materialconnodo;
+                    JOptionPane.showMessageDialog(null, "¡Nuevo material Agregado!");
+                    limpiaragregar();
+                } else {
+                    
+                    while (temporallista != null) {
+                        
+                        if (((Material) temporallista.getData()).getNombre().equals(((Material) materialconnodo.getData()).getNombre())) {
+                            
+                            if (temporallista.getPila() != null) {
+                                Nodo temporalpila = temporallista.getPila();
+                                materialconnodo.setPila(temporalpila);
+                                temporallista.setPila(materialconnodo);
+                                JOptionPane.showMessageDialog(null, "¡Material Agregado a Su Categoria!");
+                                System.out.println("agregado nueva head de cabeza ya habian elementos");
+                                limpiaragregar();
+                                break;
+                            } else {
+                                temporallista.setPila(materialconnodo);
+                                JOptionPane.showMessageDialog(null, "¡Material Agregado a Su Categoria!");
+                                System.out.println("agregado en cabeza principal de pilas no habian elementos pila");
+                                limpiaragregar();
+                                break;
+                            }
+                            
                         }
-
+                        temporallista = temporallista.getNext();
+                        
+                        if (temporallista == null) {
+                            
+                            Nodo temporal = listamateriales.head;
+                            listamateriales.head = materialconnodo;
+                            listamateriales.head.setNext(temporal);
+                            JOptionPane.showMessageDialog(null, "¡Nuevo material Agregado!");
+                            System.out.println("agregado como hermano de lista");
+                            limpiaragregar();
+                        }
                     }
-                    temporallista = temporallista.getNext();
-
-                    if (temporallista == null) {
-
-                        Nodo temporal = listamateriales.head;
-                        listamateriales.head = materialconnodo;
-                        listamateriales.head.setNext(temporal);
-                        System.out.println("agregado como hermano de lista");
-                    }
+                    
                 }
-
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "No se admiten letras en la serie del material");
             }
-
         } else {
             labelerroragregarmaterial.setText("Hay campos vacios");
         }
@@ -640,9 +808,9 @@ public class Principal extends javax.swing.JFrame {
             this.modelotablaaeliminar.addRow(datos);*/
             this.tabla_eliminarmateriales.setModel(modelotablaaeliminar);
         }
-
+        
     }
-
+    
     private void refrescartablamaverproducto() {
         this.modelotablaaeliminar = new DefaultTableModel();
         Object datos[] = new Object[4];
@@ -676,7 +844,7 @@ public class Principal extends javax.swing.JFrame {
             this.modelotablaaeliminar.addRow(datos);*/
             this.tablamaterialver.setModel(modelotablaaeliminar);
         }
-
+        
     }
     private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
 
@@ -700,7 +868,7 @@ public class Principal extends javax.swing.JFrame {
             this.Cb_materialamodificar.setModel(new DefaultComboBoxModel());
         } else {
             int contador = 0;
-
+            
             while (temporallista != null) {
                 contador++;
                 temporallista = temporallista.getNext();
@@ -718,6 +886,8 @@ public class Principal extends javax.swing.JFrame {
     private void PaneldePanelesStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_PaneldePanelesStateChanged
         if (this.PaneldePaneles.getSelectedIndex() == 2) {
             Cb_actualizar();
+        } else if (this.PaneldePaneles.getSelectedIndex() == 0) {
+            refrescartablamaverproducto();
         }
 
     }//GEN-LAST:event_PaneldePanelesStateChanged
@@ -725,7 +895,7 @@ public class Principal extends javax.swing.JFrame {
     private void Cb_materialamodificarItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Cb_materialamodificarItemStateChanged
         int contador = 0, indice = this.Cb_materialamodificar.getSelectedIndex();
         Nodo tempolista = listamateriales.getHead();
-
+        
         while (tempolista != null) {
             if (contador == indice) {
                 this.Tf_nombrematerialmodif.setText(((Material) tempolista.getData()).getNombre());
@@ -739,6 +909,64 @@ public class Principal extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_Cb_materialamodificarItemStateChanged
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        int indice = this.Cb_materialamodificar.getSelectedIndex();
+        Nodo tempolista = listamateriales.getHead();
+        int contador = 0;
+        while (tempolista != null) {
+            if (contador == indice) {
+                if (!(this.Tf_nombrematerialmodif.getText().equals(" ") || this.Tf_nombrematerialmodif.getText().equals(" ") || this.Tf_marcamaterialmodif.getText().equals(" ")
+                        || this.Tf_Numseriematerialmodif.getText().equals(" "))) {
+                    ((Material) tempolista.getData()).setNombre(this.Tf_nombrematerialmodif.getText());
+                    ((Material) tempolista.getData()).setDescripcion(this.Ta_descripcionmaterialmodif.getText());
+                    ((Material) tempolista.getData()).setMarca(this.Tf_marcamaterialmodif.getText());
+                    try {
+                        ((Material) tempolista.getData()).setNumeroDeSerie(Integer.parseInt(this.Tf_Numseriematerialmodif.getText()));
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, "¡No se admiten letras en la serie del Material!");
+                        contador--;
+                    }
+                    JOptionPane.showMessageDialog(null, "¡Modificado!");
+                    this.Tf_nombrematerialmodif.setText("");
+                    this.Ta_descripcionmaterialmodif.setText("");
+                    this.Tf_marcamaterialmodif.setText("");
+                    this.Tf_Numseriematerialmodif.setText("");
+                    
+                } else {
+                    JOptionPane.showMessageDialog(null, "¡Error!, hay campos vacios");
+                }
+                
+            }
+            contador++;
+            tempolista = tempolista.getNext();
+        }
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void Panel_empleadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_empleadosMouseClicked
+        this.Vnetana_Empleados.pack();
+        this.Vnetana_Empleados.setLocationRelativeTo(this);
+        this.Vnetana_Empleados.setVisible(true);
+    }//GEN-LAST:event_Panel_empleadosMouseClicked
+
+    private void bt_agregarempleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_agregarempleadoMouseClicked
+        String nombre, direccion;
+        int id = -1, edad = -1;
+        double salario = 0.0;
+        
+        nombre = this.tf_nombreempleados.getText();
+        direccion = this.tf_direccionempleados.getText();
+        try {
+            id = Integer.parseInt(this.tf_identidadempleados.getText());
+            edad = Integer.parseInt(this.tf_edadempleados.getText());
+            salario = Double.parseDouble(this.tf_salarioempleado.getText());
+            Empleado nuevoempleado = new Empleado(nombre, direccion, id, edad, salario);
+            Nodo nodonuevoempleado = new Nodo(null, null, nuevoempleado);
+            colaempleados.Queue(nodonuevoempleado);
+            
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_bt_agregarempleadoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -784,6 +1012,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTabbedPane PaneldePaneles;
     private javax.swing.JTextArea Ta_descripcionmaterial;
     private javax.swing.JTextArea Ta_descripcionmaterialmodif;
+    private javax.swing.JTable Tabla_empleadosver;
     private javax.swing.JTextField Tf_Numseriematerial;
     private javax.swing.JTextField Tf_Numseriematerialmodif;
     private javax.swing.JTextField Tf_marcamaterial;
@@ -791,8 +1020,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField Tf_nombrematerial;
     private javax.swing.JTextField Tf_nombrematerialmodif;
     private javax.swing.JDialog Ventana_Materiales;
+    private javax.swing.JDialog Vnetana_Empleados;
+    private javax.swing.JToggleButton bt_agregarempleado;
     private javax.swing.JButton btn_eliminarmaterial;
+    private javax.swing.JComboBox<String> cb_modficarempleado;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -804,9 +1037,32 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -816,13 +1072,32 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JLabel labelerroragregarmaterial;
+    private javax.swing.JTable ta_eliminarempleados;
     private javax.swing.JTable tabla_eliminarmateriales;
     private javax.swing.JTable tablamaterialver;
+    private javax.swing.JTextField tf_direccionempleadomodif;
+    private javax.swing.JTextField tf_direccionempleados;
+    private javax.swing.JTextField tf_edadempleadomodif;
+    private javax.swing.JTextField tf_edadempleados;
+    private javax.swing.JTextField tf_identidadempleadomodif;
+    private javax.swing.JTextField tf_identidadempleados;
+    private javax.swing.JTextField tf_nombreempleadomodif;
+    private javax.swing.JTextField tf_nombreempleados;
+    private javax.swing.JTextField tf_salarioempleado;
+    private javax.swing.JTextField tf_salarioempleadomodif;
     // End of variables declaration//GEN-END:variables
     MaterialesListaPilas listamateriales = new MaterialesListaPilas();
     ColaEmpleados colaempleados = new ColaEmpleados();
