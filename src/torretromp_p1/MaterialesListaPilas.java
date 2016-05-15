@@ -112,29 +112,26 @@ public class MaterialesListaPilas {
     }
 
     public void delete(int posicion) {
-        if (size() >= posicion) {
-            if (posicion == 0) {
-                setHead(null);
-            } else if (posicion == 1) {
-                Nodo temp = head;
-                temp = temp.getNext();
-                temp = temp.getNext();
-                head.setNext(temp);
-            } else {
-                int contador = 0;
-                Nodo temp = head;
-                while (contador < posicion - 1) {
-                    temp = temp.getNext();
-                    contador++;
-                }
-                Nodo temp2 = temp.getNext();
-                Nodo temp3 = temp2.getNext();
-                temp.setNext(temp3);
-            }
-        } else {
 
-            System.err.println("Index out of bounds");
+        if (posicion == 0) {
+            head=head.getNext();
+        } else if (posicion == 1) {
+            Nodo temp = head;
+            temp = temp.getNext();
+            temp = temp.getNext();
+            head.setNext(temp);
+        } else {
+            int contador = 0;
+            Nodo temp = head;
+            while (contador < posicion - 1) {
+                temp = temp.getNext();
+                contador++;
+            }
+            Nodo temp2 = temp.getNext();
+            Nodo temp3 = temp2.getNext();
+            temp.setNext(temp3);
         }
+
     }
 
     /* public void concat(Lista uncominglist) {

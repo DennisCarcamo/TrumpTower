@@ -1,18 +1,18 @@
 package torretromp_p1;
 
 public class Lista {
-    
+
     Nodo head;
 
     //opcional un zise;
     public Lista(Nodo head) {
         this.head = head;
-        
+
     }
-    
+
     public Lista() {
     }
-    
+
     public void setHead(Nodo uncomingnode) {
         if (this.head == null) {
             this.head = uncomingnode;
@@ -21,35 +21,31 @@ public class Lista {
             this.head = uncomingnode;
         }
     }
-    
+
     public Nodo getHead() {
         return this.head;
     }
-    
-    public void insert(int position, int value) {
+
+    public void insert(int position, Nodo value) {
         if (position == 0) {
-            Nodo temporal = new Nodo();
-            temporal.setData(value);
-            temporal.setNext(head);
-            head = temporal;
+            value.setNext(head);
+            head = value;
         } else {
             Nodo headtemp = head;
             int contador = 0;
-            while (headtemp.getNext() != null) {
+            while (headtemp != null) {
                 contador++;
                 if (contador == position) {
-                    Nodo nodoinsertar = new Nodo();
-                    nodoinsertar.setData(value);
-                    nodoinsertar.setNext(headtemp.getNext());
-                    headtemp.setNext(nodoinsertar);
+                    value.setNext(headtemp.getNext());
+                    headtemp.setNext(value);
                     break;
                 }
                 headtemp = headtemp.getNext();
             }
-            
+
         }
     }
-    
+
     public Object at(int position) {
         Nodo temporal = this.head;
         boolean bandera = false;
@@ -64,14 +60,14 @@ public class Lista {
             }
             temporal = temporal.getNext();
         }
-        
+
         if (bandera == false) {
             returnvalue = -1;
         }
-        
+
         return returnvalue;
     }
-    
+
     public void concat(Lista uncominglist) {
         Nodo temporal = this.getHead();
         if (temporal != null) {
@@ -82,7 +78,7 @@ public class Lista {
         } else {
             this.head = uncominglist.getHead();
         }
-        
+
     }
-    
+
 }

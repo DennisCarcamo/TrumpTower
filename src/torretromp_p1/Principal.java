@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class Principal extends javax.swing.JFrame {
-    
+
     public Principal() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -179,6 +179,9 @@ public class Principal extends javax.swing.JFrame {
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton1MouseEntered(evt);
             }
         });
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, -1, -1));
@@ -666,7 +669,7 @@ public class Principal extends javax.swing.JFrame {
         this.Ventana_Materiales.setLocationRelativeTo(this);
         //this.Ventana_Materiales.setModal();
         this.Ventana_Materiales.setVisible(true);
-        
+
 
     }//GEN-LAST:event_Panel_mterialMouseClicked
 
@@ -700,7 +703,7 @@ public class Principal extends javax.swing.JFrame {
             this.tabla_eliminarmateriales.setModel(modelotablaaeliminar);
         } else {
         }
-        
+
 
     }//GEN-LAST:event_PaneldePanelesMouseClicked
     private void limpiaragregar() {
@@ -712,31 +715,31 @@ public class Principal extends javax.swing.JFrame {
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         String nombre, descripcion, marca;
         int numeroDeSerie;
-        
+
         if (!(this.Tf_nombrematerial.getText().equals("") || this.Ta_descripcionmaterial.getText().equals("")
                 || this.Tf_Numseriematerial.getText().equals("") || this.Tf_marcamaterial.getText().equals(""))) {
-            
+
             nombre = Tf_nombrematerial.getText();
             descripcion = Ta_descripcionmaterial.getText();
             marca = Tf_marcamaterial.getText();
             try {
                 numeroDeSerie = Integer.parseInt(this.Tf_Numseriematerial.getText());
-                
+
                 Material materialnuevo = new Material(nombre, descripcion, marca, numeroDeSerie);
                 Nodo materialconnodo = new Nodo(null, null, materialnuevo);
                 Nodo temporallista = listamateriales.head;
                 if (temporallista == null) {
-                    
+
                     System.out.println("null");
                     listamateriales.head = materialconnodo;
                     JOptionPane.showMessageDialog(null, "¡Nuevo material Agregado!");
                     limpiaragregar();
                 } else {
-                    
+
                     while (temporallista != null) {
-                        
+
                         if (((Material) temporallista.getData()).getNombre().equals(((Material) materialconnodo.getData()).getNombre())) {
-                            
+
                             if (temporallista.getPila() != null) {
                                 Nodo temporalpila = temporallista.getPila();
                                 materialconnodo.setPila(temporalpila);
@@ -752,12 +755,12 @@ public class Principal extends javax.swing.JFrame {
                                 limpiaragregar();
                                 break;
                             }
-                            
+
                         }
                         temporallista = temporallista.getNext();
-                        
+
                         if (temporallista == null) {
-                            
+
                             Nodo temporal = listamateriales.head;
                             listamateriales.head = materialconnodo;
                             listamateriales.head.setNext(temporal);
@@ -766,7 +769,7 @@ public class Principal extends javax.swing.JFrame {
                             limpiaragregar();
                         }
                     }
-                    
+
                 }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "No se admiten letras en la serie del material");
@@ -808,9 +811,9 @@ public class Principal extends javax.swing.JFrame {
             this.modelotablaaeliminar.addRow(datos);*/
             this.tabla_eliminarmateriales.setModel(modelotablaaeliminar);
         }
-        
+
     }
-    
+
     private void refrescartablamaverproducto() {
         this.modelotablaaeliminar = new DefaultTableModel();
         Object datos[] = new Object[4];
@@ -844,7 +847,7 @@ public class Principal extends javax.swing.JFrame {
             this.modelotablaaeliminar.addRow(datos);*/
             this.tablamaterialver.setModel(modelotablaaeliminar);
         }
-        
+
     }
     private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
 
@@ -852,9 +855,13 @@ public class Principal extends javax.swing.JFrame {
 
     private void btn_eliminarmaterialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_eliminarmaterialMouseClicked
         int indicematerialeliminar = this.tabla_eliminarmateriales.getSelectedRow();
-        listamateriales.delete(indicematerialeliminar);
-        refrescartablamaterialeliminar();
-        refrescartablamaverproducto();
+        if (indicematerialeliminar != -1) {
+            System.out.println("indice de la tabla " + indicematerialeliminar);
+            listamateriales.delete(indicematerialeliminar);
+            refrescartablamaterialeliminar();
+            refrescartablamaverproducto();
+        }
+
 
     }//GEN-LAST:event_btn_eliminarmaterialMouseClicked
 
@@ -868,7 +875,7 @@ public class Principal extends javax.swing.JFrame {
             this.Cb_materialamodificar.setModel(new DefaultComboBoxModel());
         } else {
             int contador = 0;
-            
+
             while (temporallista != null) {
                 contador++;
                 temporallista = temporallista.getNext();
@@ -895,7 +902,7 @@ public class Principal extends javax.swing.JFrame {
     private void Cb_materialamodificarItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_Cb_materialamodificarItemStateChanged
         int contador = 0, indice = this.Cb_materialamodificar.getSelectedIndex();
         Nodo tempolista = listamateriales.getHead();
-        
+
         while (tempolista != null) {
             if (contador == indice) {
                 this.Tf_nombrematerialmodif.setText(((Material) tempolista.getData()).getNombre());
@@ -932,11 +939,11 @@ public class Principal extends javax.swing.JFrame {
                     this.Ta_descripcionmaterialmodif.setText("");
                     this.Tf_marcamaterialmodif.setText("");
                     this.Tf_Numseriematerialmodif.setText("");
-                    
+
                 } else {
                     JOptionPane.showMessageDialog(null, "¡Error!, hay campos vacios");
                 }
-                
+
             }
             contador++;
             tempolista = tempolista.getNext();
@@ -951,22 +958,41 @@ public class Principal extends javax.swing.JFrame {
 
     private void bt_agregarempleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_agregarempleadoMouseClicked
         String nombre, direccion;
-        int id = -1, edad = -1;
-        double salario = 0.0;
-        
+        int id, edad;
+        double salario;
+
         nombre = this.tf_nombreempleados.getText();
         direccion = this.tf_direccionempleados.getText();
-        try {
-            id = Integer.parseInt(this.tf_identidadempleados.getText());
-            edad = Integer.parseInt(this.tf_edadempleados.getText());
-            salario = Double.parseDouble(this.tf_salarioempleado.getText());
-            Empleado nuevoempleado = new Empleado(nombre, direccion, id, edad, salario);
-            Nodo nodonuevoempleado = new Nodo(null, null, nuevoempleado);
-            colaempleados.Queue(nodonuevoempleado);
-            
-        } catch (Exception e) {
+
+        id = Integer.parseInt(this.tf_identidadempleados.getText());
+        edad = Integer.parseInt(this.tf_edadempleados.getText());
+        salario = Double.parseDouble(this.tf_salarioempleado.getText());
+        Empleado nuevoempleado = new Empleado(nombre, direccion, id, edad, salario);
+        Nodo nodonuevoempleado = new Nodo(null, null, nuevoempleado);
+        colaempleados.Queue(nodonuevoempleado);
+
+        //agrega a l lista
+        if (listaempleados.getHead() != null) {
+            listaempleados.setHead(nodonuevoempleado);
+            System.out.println("agegado a la cabeza de lista empleado");
+        } else {
+            Nodo tempolistaemplea = listaempleados.getHead();
+            int contador = -1;
+            while (tempolistaemplea != null) {
+                contador++;
+                tempolistaemplea = tempolistaemplea.getNext();
+            }
+            System.out.println("agegado hermano empleado");
+            listaempleados.insert(contador, nodonuevoempleado);
         }
+        //
+
+
     }//GEN-LAST:event_bt_agregarempleadoMouseClicked
+
+    private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1MouseEntered
 
     /**
      * @param args the command line arguments
@@ -1101,6 +1127,7 @@ public class Principal extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     MaterialesListaPilas listamateriales = new MaterialesListaPilas();
     ColaEmpleados colaempleados = new ColaEmpleados();
+    Lista listaempleados = new Lista();
     CatalogodeProductosTDALinkList catalogo = new CatalogodeProductosTDALinkList();
     DefaultTableModel modelotablaaeliminar;
 }
