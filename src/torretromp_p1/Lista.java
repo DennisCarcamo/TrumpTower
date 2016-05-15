@@ -34,7 +34,7 @@ public class Lista {
         } else {
             Nodo headtemp = head;
             int contador = 0;
-            while (headtemp != null) {
+            while (headtemp.getNext() != null) {
                 System.out.println("infinito");
                 contador++;
                 if (contador == position) {
@@ -68,6 +68,27 @@ public class Lista {
         }
 
         return returnvalue;
+    }
+
+    public void delete(int indice) {
+        if (indice == 0) {
+            head = head.getNext();
+        } else {
+            Nodo temp = head;
+            int contador = -1;
+            while (temp != null) {
+                contador++;
+                if (contador == indice) {
+                    Nodo temporal = temp.getNext();
+                    temporal.setNext(temp.getNext());
+                    temp.setNext(temporal.getNext());
+
+                }
+                temp = temp.getNext();
+
+            }
+        }
+
     }
 
     public void concat(Lista uncominglist) {
