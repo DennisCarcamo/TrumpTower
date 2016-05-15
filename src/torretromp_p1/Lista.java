@@ -29,11 +29,13 @@ public class Lista {
     public void insert(int position, Nodo value) {
         if (position == 0) {
             value.setNext(head);
+            System.out.println("cabeza");
             head = value;
         } else {
             Nodo headtemp = head;
             int contador = 0;
             while (headtemp != null) {
+                System.out.println("infinito");
                 contador++;
                 if (contador == position) {
                     value.setNext(headtemp.getNext());

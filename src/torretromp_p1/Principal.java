@@ -64,7 +64,7 @@ public class Principal extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel26 = new javax.swing.JLabel();
         Vnetana_Empleados = new javax.swing.JDialog();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        PanelEmpleados = new javax.swing.JTabbedPane();
         jPanel5 = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -332,6 +332,11 @@ public class Principal extends javax.swing.JFrame {
         jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, -1, -1));
 
         jButton3.setText("Restablecer");
+        jButton3.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jButton3StateChanged(evt);
+            }
+        });
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton3MouseClicked(evt);
@@ -359,8 +364,13 @@ public class Principal extends javax.swing.JFrame {
         Vnetana_Empleados.setBackground(new java.awt.Color(102, 102, 0));
         Vnetana_Empleados.setResizable(false);
 
-        jTabbedPane1.setBackground(new java.awt.Color(102, 102, 0));
-        jTabbedPane1.setName("Empleados"); // NOI18N
+        PanelEmpleados.setBackground(new java.awt.Color(102, 102, 0));
+        PanelEmpleados.setName("Empleados"); // NOI18N
+        PanelEmpleados.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                PanelEmpleadosStateChanged(evt);
+            }
+        });
 
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -396,7 +406,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/torretromp_p1/1.jpg"))); // NOI18N
         jPanel5.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 500, 370));
 
-        jTabbedPane1.addTab("Ver Empleados", jPanel5);
+        PanelEmpleados.addTab("Ver Empleados", jPanel5);
 
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -424,20 +434,10 @@ public class Principal extends javax.swing.JFrame {
         jLabel28.setFont(new java.awt.Font("Agency FB", 0, 14)); // NOI18N
         jLabel28.setText("Salario");
         jPanel6.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(92, 232, -1, 19));
-
-        tf_nombreempleados.setText("      ");
         jPanel6.add(tf_nombreempleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 82, 226, -1));
-
-        tf_identidadempleados.setText("      ");
         jPanel6.add(tf_identidadempleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 158, 226, -1));
-
-        tf_direccionempleados.setText("      ");
         jPanel6.add(tf_direccionempleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 120, 226, -1));
-
-        tf_salarioempleado.setText("      ");
         jPanel6.add(tf_salarioempleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 233, 89, -1));
-
-        tf_edadempleados.setText(" ");
         jPanel6.add(tf_edadempleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 195, 43, -1));
 
         bt_agregarempleado.setText("Agregar");
@@ -451,7 +451,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/torretromp_p1/1.jpg"))); // NOI18N
         jPanel6.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 500, 370));
 
-        jTabbedPane1.addTab("Agregar Empleados", jPanel6);
+        PanelEmpleados.addTab("Agregar Empleados", jPanel6);
 
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -496,6 +496,11 @@ public class Principal extends javax.swing.JFrame {
         jPanel7.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 111, -1, -1));
 
         jToggleButton2.setText("Aceptar");
+        jToggleButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jToggleButton2MouseClicked(evt);
+            }
+        });
         jPanel7.add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 284, -1, -1));
 
         jPanel7.add(cb_modficarempleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 75, 226, -1));
@@ -507,7 +512,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/torretromp_p1/1.jpg"))); // NOI18N
         jPanel7.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 500, 370));
 
-        jTabbedPane1.addTab("Modificar Datos", jPanel7);
+        PanelEmpleados.addTab("Modificar Datos", jPanel7);
 
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -546,17 +551,17 @@ public class Principal extends javax.swing.JFrame {
         jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/torretromp_p1/1.jpg"))); // NOI18N
         jPanel8.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 500, 370));
 
-        jTabbedPane1.addTab("Eliminar Empleados", jPanel8);
+        PanelEmpleados.addTab("Eliminar Empleados", jPanel8);
 
         javax.swing.GroupLayout Vnetana_EmpleadosLayout = new javax.swing.GroupLayout(Vnetana_Empleados.getContentPane());
         Vnetana_Empleados.getContentPane().setLayout(Vnetana_EmpleadosLayout);
         Vnetana_EmpleadosLayout.setHorizontalGroup(
             Vnetana_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(PanelEmpleados)
         );
         Vnetana_EmpleadosLayout.setVerticalGroup(
             Vnetana_EmpleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(PanelEmpleados)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -814,7 +819,7 @@ public class Principal extends javax.swing.JFrame {
 
     }
 
-    private void refrescartablamaverproducto() {
+    private void tablavermateriales() {
         this.modelotablaaeliminar = new DefaultTableModel();
         Object datos[] = new Object[4];
         modelotablaaeliminar.addColumn("Numero de Serie");
@@ -859,7 +864,7 @@ public class Principal extends javax.swing.JFrame {
             System.out.println("indice de la tabla " + indicematerialeliminar);
             listamateriales.delete(indicematerialeliminar);
             refrescartablamaterialeliminar();
-            refrescartablamaverproducto();
+            tablavermateriales();
         }
 
 
@@ -894,7 +899,7 @@ public class Principal extends javax.swing.JFrame {
         if (this.PaneldePaneles.getSelectedIndex() == 2) {
             Cb_actualizar();
         } else if (this.PaneldePaneles.getSelectedIndex() == 0) {
-            refrescartablamaverproducto();
+            tablavermateriales();
         }
 
     }//GEN-LAST:event_PaneldePanelesStateChanged
@@ -972,7 +977,7 @@ public class Principal extends javax.swing.JFrame {
         colaempleados.Queue(nodonuevoempleado);
 
         //agrega a l lista
-        if (listaempleados.getHead() != null) {
+        if (listaempleados.getHead() == null) {
             listaempleados.setHead(nodonuevoempleado);
             System.out.println("agegado a la cabeza de lista empleado");
         } else {
@@ -993,6 +998,115 @@ public class Principal extends javax.swing.JFrame {
     private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1MouseEntered
+    private void tablaverempleados() {
+        modelotablaempleados = new DefaultTableModel();
+        Object datos[] = new Object[5];
+        modelotablaempleados.addColumn("ID");
+        modelotablaempleados.addColumn("Nombre");
+        modelotablaempleados.addColumn("Direccion");
+        modelotablaempleados.addColumn("Edad");
+        modelotablaempleados.addColumn("Salario");
+        int contador = 0;
+        if (listaempleados.getHead() != null) {
+            Nodo temporallista = listaempleados.getHead();
+            while (temporallista.getNext() != null) {
+                contador++;
+                temporallista = temporallista.getNext();
+            }
+            temporallista = listaempleados.getHead();
+            for (int i = 0; i <= contador; i++) {
+                datos[0] = ((Empleado) temporallista.getData()).getId();
+                datos[1] = ((Empleado) temporallista.getData()).getNombre();
+                datos[2] = ((Empleado) temporallista.getData()).getDireccion();
+                datos[3] = ((Empleado) temporallista.getData()).getEdad();
+                datos[4] = ((Empleado) temporallista.getData()).getSalario();
+                this.modelotablaempleados.addRow(datos);
+                temporallista = temporallista.getNext();
+            }
+            this.Tabla_empleadosver.setModel(modelotablaempleados);
+            this.ta_eliminarempleados.setModel(modelotablaempleados);
+        } else {
+
+            /*  datos[0] = "";
+            datos[1] = "";
+            datos[2] = "";
+            datos[3] = "";
+            this.modelotablaaeliminar.addRow(datos);*/
+            this.Tabla_empleadosver.setModel(modelotablaempleados);
+            this.ta_eliminarempleados.setModel(modelotablaempleados);
+        }
+    }
+
+    private void Cbactualizar() {
+        this.cb_modficarempleado.setModel(new DefaultComboBoxModel());
+        Nodo temporallista = listamateriales.getHead();
+        if (temporallista == null) {
+            this.cb_modficarempleado.setModel(new DefaultComboBoxModel());
+        } else {
+            int contador = 0;
+
+            while (temporallista != null) {
+                contador++;
+                temporallista = temporallista.getNext();
+            }
+            temporallista = listaempleados.getHead();
+            for (int i = 0; i <= contador; i++) {
+                if (temporallista != null) {
+                    this.cb_modficarempleado.addItem(((Material) temporallista.getData()).getNombre());
+                    temporallista = temporallista.getNext();
+                }
+            }
+            this.tablamaterialver.setModel(modelotablaaeliminar);
+        }
+    }
+
+    private void PanelEmpleadosStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_PanelEmpleadosStateChanged
+        if (this.PanelEmpleados.getSelectedIndex() == 0 || this.PanelEmpleados.getSelectedIndex() == 3) {
+            tablaverempleados();
+        } else if (this.PanelEmpleados.getSelectedIndex() == 2) {
+            Cbactualizar();
+        }
+    }//GEN-LAST:event_PanelEmpleadosStateChanged
+
+    private void jButton3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jButton3StateChanged
+
+    }//GEN-LAST:event_jButton3StateChanged
+
+    private void jToggleButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton2MouseClicked
+        int indice = this.cb_modficarempleado.getSelectedIndex();
+        Nodo tempolista = listaempleados.getHead();
+        int contador = 0;
+        while (tempolista != null) {
+            if (contador == indice) {
+                if (!(this.tf_nombreempleadomodif.getText().equals(" ") || this.tf_direccionempleadomodif.getText().equals(" ") || this.tf_identidadempleadomodif.getText().equals(" ")
+                        || this.tf_edadempleadomodif.getText().equals(" ") || this.tf_salarioempleadomodif.getText().equals(""))) {
+                    ((Empleado) tempolista.getData()).setNombre(this.tf_nombreempleadomodif.getText());
+                    ((Empleado) tempolista.getData()).setDireccion(this.tf_direccionempleadomodif.getText());
+
+                    try {
+                        ((Empleado) tempolista.getData()).setId(Integer.parseInt(this.tf_identidadempleadomodif.getText()));
+                        ((Empleado) tempolista.getData()).setEdad(Integer.parseInt(this.tf_edadempleadomodif.getText()));
+                        ((Empleado) tempolista.getData()).setSalario(Double.parseDouble(this.tf_salarioempleadomodif.getText()));
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, "¡No meta letras donde requiere numeros!");
+                        contador--;
+                    }
+                    JOptionPane.showMessageDialog(null, "¡Modificado!");
+                    this.tf_nombreempleadomodif.setText("");
+                    this.tf_direccionempleadomodif.setText("");
+                    this.tf_identidadempleadomodif.setText("");
+                    this.tf_edadempleadomodif.setText("");
+                    this.tf_salarioempleadomodif.setText("");
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "¡Error!, hay campos vacios");
+                }
+
+            }
+            contador++;
+            tempolista = tempolista.getNext();
+        }
+    }//GEN-LAST:event_jToggleButton2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1031,6 +1145,7 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Cb_materialamodificar;
+    private javax.swing.JTabbedPane PanelEmpleados;
     private javax.swing.JPanel Panel_Producto;
     private javax.swing.JPanel Panel_empleados;
     private javax.swing.JPanel Panel_lineaEnsablaje;
@@ -1108,7 +1223,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JLabel labelerroragregarmaterial;
     private javax.swing.JTable ta_eliminarempleados;
@@ -1129,5 +1243,5 @@ public class Principal extends javax.swing.JFrame {
     ColaEmpleados colaempleados = new ColaEmpleados();
     Lista listaempleados = new Lista();
     CatalogodeProductosTDALinkList catalogo = new CatalogodeProductosTDALinkList();
-    DefaultTableModel modelotablaaeliminar;
+    DefaultTableModel modelotablaaeliminar, modelotablaempleados;
 }

@@ -8,10 +8,12 @@ public class ColaEmpleados {
     public void Queue(Nodo nodonuevo) {//mete un nodo
 
         if (head == null) {
+            System.out.println("cola cabeza");
             head = nodonuevo;
             this.size++;
         } else {
             Nodo temporal = head;
+            System.out.println("cola hijo");
             while (temporal.getNext() != null) {
                 temporal = temporal.getNext();
             }
