@@ -8,36 +8,34 @@ public class LineaDeEnsablajeTDAcola {
     /*  public void setHead(Nodo newhead){
         this.head=newhead;
     }*/
-    public void Queue(Empleado empleado) {
-        Nodo nodonuevo = new Nodo(null, null, empleado);
+    public void Queue(Nodo orden) {//mete un nodo
+
         if (head == null) {
-            head = nodonuevo;
+            head = orden;
             this.size++;
         } else {
-            int contador = -1;
             Nodo temporal = head;
             while (temporal.getNext() != null) {
                 temporal = temporal.getNext();
             }
-            temporal.setNext(nodonuevo);
+            temporal.setNext(orden);
             this.size++;
         }
     }
 
-    public Nodo DeQueue() {
+    public Nodo DeQueue() {//saca a head
         Nodo temporal = head;
         if (head.getNext() != null) {
             head = head.getNext();
+            this.size--;
         }
 
         return temporal;
 
     }
 
-    public Empleado Peek() {
-        Object empleadoObject = this.head.getData();
-        Empleado empleado = (Empleado) empleadoObject;
-        return empleado;
+    public Nodo Peek() {//solo muestra no saca
+        return this.head;
     }
 
     public int getSize() {

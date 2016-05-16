@@ -41,13 +41,6 @@ public class MaterialesListaPilas {
     }
 
     //
-    //
-    //
-    ///
-    //
-    //
-    //
-    //
     public void setHead(Nodo uncomingnode) {
         if (uncomingnode == null) {
             this.head = null;
@@ -114,7 +107,7 @@ public class MaterialesListaPilas {
     public void delete(int posicion) {
 
         if (posicion == 0) {
-            head=head.getNext();
+            head = head.getNext();
         } else if (posicion == 1) {
             Nodo temp = head;
             temp = temp.getNext();

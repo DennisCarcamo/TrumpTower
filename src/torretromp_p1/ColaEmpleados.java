@@ -33,9 +33,7 @@ public class ColaEmpleados {
     }
 
     public Nodo Peek() {//muestra un  nodo
-        Object empleadoObject = this.head.getData();
-        Nodo empleado = (Nodo) empleadoObject;
-        return empleado;
+        return this.head;
     }
 
     public int getSize() {

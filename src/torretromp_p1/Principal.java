@@ -144,6 +144,10 @@ public class Principal extends javax.swing.JFrame {
         jLabel57 = new javax.swing.JLabel();
         cb_ordenar = new javax.swing.JComboBox<>();
         jToggleButton1 = new javax.swing.JToggleButton();
+        Produciendo = new javax.swing.JDialog();
+        jLabel58 = new javax.swing.JLabel();
+        jProgressBar1 = new javax.swing.JProgressBar();
+        jLabel59 = new javax.swing.JLabel();
         Panel_Producto = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         Panel_empleados = new javax.swing.JPanel();
@@ -916,6 +920,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel57.setText("Agregar Orden a la Linea de Produccion");
 
         jToggleButton1.setText("Producir");
+        jToggleButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jToggleButton1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout Ventana_OrdenLayout = new javax.swing.GroupLayout(Ventana_Orden.getContentPane());
         Ventana_Orden.getContentPane().setLayout(Ventana_OrdenLayout);
@@ -939,6 +948,37 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(cb_ordenar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jToggleButton1))
                 .addContainerGap(53, Short.MAX_VALUE))
+        );
+
+        jLabel58.setText(" ");
+
+        jLabel59.setText("Progreso ");
+
+        javax.swing.GroupLayout ProduciendoLayout = new javax.swing.GroupLayout(Produciendo.getContentPane());
+        Produciendo.getContentPane().setLayout(ProduciendoLayout);
+        ProduciendoLayout.setHorizontalGroup(
+            ProduciendoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ProduciendoLayout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
+                .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
+            .addGroup(ProduciendoLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        ProduciendoLayout.setVerticalGroup(
+            ProduciendoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ProduciendoLayout.createSequentialGroup()
+                .addContainerGap(31, Short.MAX_VALUE)
+                .addComponent(jLabel58)
+                .addGap(18, 18, 18)
+                .addGroup(ProduciendoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel59))
+                .addGap(22, 22, 22))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1026,6 +1066,12 @@ public class Principal extends javax.swing.JFrame {
         );
 
         getContentPane().add(Panel_mterial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 140, -1));
+
+        Panel_lineaEnsablaje.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Panel_lineaEnsablajeMouseClicked(evt);
+            }
+        });
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Linea de Ensamblaje");
@@ -1804,12 +1850,74 @@ public class Principal extends javax.swing.JFrame {
             tempolista = tempolista.getNext();
         }
     }//GEN-LAST:event_jToggleButton4MouseClicked
+    private void cborden() {
+        this.cb_ordenar.setModel(new DefaultComboBoxModel());
+        Nodo temporallista = catalogo.getHead();
+        if (temporallista == null) {
+            this.cb_ordenar.setModel(new DefaultComboBoxModel());
+        } else {
+            int contador = 0;
+            while (temporallista != null) {
+                contador++;
+                temporallista = temporallista.getNext();
+            }
+            temporallista = catalogo.getHead();
+            for (int i = 0; i <= contador; i++) {
+                if (temporallista != null) {
+                    this.cb_ordenar.addItem(((Producto) temporallista.getData()).getNombre());
+                    temporallista = temporallista.getNext();
+                }
+            }
 
+        }
+
+    }
     private void Panel_mterial1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_mterial1MouseClicked
         this.Ventana_Orden.pack();
         this.Ventana_Orden.setLocationRelativeTo(this);
         this.Ventana_Orden.setVisible(true);
+        cborden();
     }//GEN-LAST:event_Panel_mterial1MouseClicked
+
+    private void jToggleButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseClicked
+        int indice = this.cb_ordenar.getSelectedIndex();
+        int contador = -1;
+        Nodo tempoprod = catalogo.getHead();
+        if (indice != -1) {
+            while (tempoprod != null) {
+                contador++;
+                if (contador == indice) {
+                    colaordenes.Queue(tempoprod);
+                    JOptionPane.showMessageDialog(null, "Orden tomada");
+                    break;
+                }
+                tempoprod = tempoprod.getNext();
+
+            }
+
+        }
+    }//GEN-LAST:event_jToggleButton1MouseClicked
+
+    private void Panel_lineaEnsablajeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_lineaEnsablajeMouseClicked
+        ColaEmpleados coleempleados = new ColaEmpleados();
+
+        boolean bandera = true;
+        if (listamateriales.getHead() == null || listaempleados.getHead() == null
+                || colaordenes.Peek() != null) {
+            bandera = false;
+        }
+
+        if (bandera) {
+            System.out.println("1");
+            Nodo tempempleados = listaempleados.getHead();
+            while (tempempleados != null) {
+                coleempleados.Queue(tempempleados);
+                tempempleados = tempempleados.getNext();
+            }
+        }
+
+
+    }//GEN-LAST:event_Panel_lineaEnsablajeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1864,6 +1972,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel Panel_mterial;
     private javax.swing.JPanel Panel_mterial1;
     private javax.swing.JTabbedPane PaneldePaneles;
+    private javax.swing.JDialog Produciendo;
     private javax.swing.JTextArea Ta_descripcionmaterial;
     private javax.swing.JTextArea Ta_descripcionmaterialmodif;
     private javax.swing.JTable Tabla_empleadosver;
@@ -1942,6 +2051,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1957,6 +2068,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -1991,6 +2103,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDialog ventanaProductos;
     // End of variables declaration//GEN-END:variables
     MaterialesListaPilas listamateriales = new MaterialesListaPilas();
+    LineaDeEnsablajeTDAcola colaordenes = new LineaDeEnsablajeTDAcola();
     ColaEmpleados colaempleados = new ColaEmpleados();
     Lista listaempleados = new Lista();
     Lista materialesProductos = null;
