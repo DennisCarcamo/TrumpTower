@@ -1,6 +1,7 @@
 package torretromp_p1;
 
 import java.awt.Color;
+import java.awt.HeadlessException;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -106,6 +107,43 @@ public class Principal extends javax.swing.JFrame {
         ta_eliminarempleados = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
         jLabel39 = new javax.swing.JLabel();
+        ventanaProductos = new javax.swing.JDialog();
+        PanelProducto = new javax.swing.JTabbedPane();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        tf_nombreproducto = new javax.swing.JTextField();
+        tf_descripcionproducto = new javax.swing.JTextField();
+        tf_tiempoproducto = new javax.swing.JTextField();
+        cb_materialesproductos = new javax.swing.JComboBox<>();
+        bt_agregarmaterialaProducto = new javax.swing.JButton();
+        jLabel46 = new javax.swing.JLabel();
+        bt_Agregar = new javax.swing.JToggleButton();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel47 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        ta_eliminarProductos = new javax.swing.JTable();
+        jButton5 = new javax.swing.JButton();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel48 = new javax.swing.JLabel();
+        cb_modficarProducto = new javax.swing.JComboBox<>();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        tf_nombreProductomodif = new javax.swing.JTextField();
+        tf_tiempoProductomodif = new javax.swing.JTextField();
+        tf_descriProductomodif = new javax.swing.JTextField();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        bt_reelegirMateriales = new javax.swing.JToggleButton();
+        jToggleButton4 = new javax.swing.JToggleButton();
+        Ventana_Orden = new javax.swing.JDialog();
+        jLabel57 = new javax.swing.JLabel();
+        cb_ordenar = new javax.swing.JComboBox<>();
+        jToggleButton1 = new javax.swing.JToggleButton();
         Panel_Producto = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         Panel_empleados = new javax.swing.JPanel();
@@ -114,6 +152,9 @@ public class Principal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         Panel_lineaEnsablaje = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        Panel_mterial1 = new javax.swing.JPanel();
+        jLabel56 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         Ventana_Materiales.setTitle("Materiales");
@@ -579,10 +620,337 @@ public class Principal extends javax.swing.JFrame {
             .addComponent(PanelEmpleados)
         );
 
+        PanelProducto.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                PanelProductoStateChanged(evt);
+            }
+        });
+
+        jLabel42.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel42.setText("Nombre del Producto");
+
+        jLabel43.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel43.setText("Descripcion");
+
+        jLabel44.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel44.setText("Tiempo de ensamblaje");
+
+        jLabel45.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel45.setText("Materiales Necesarios");
+
+        bt_agregarmaterialaProducto.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        bt_agregarmaterialaProducto.setText("agregar");
+        bt_agregarmaterialaProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_agregarmaterialaProductoActionPerformed(evt);
+            }
+        });
+
+        jLabel46.setFont(new java.awt.Font("Agency FB", 0, 24)); // NOI18N
+        jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel46.setText("Agregar un Nuevo Producto");
+
+        bt_Agregar.setText("Agregar");
+        bt_Agregar.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                bt_AgregarStateChanged(evt);
+            }
+        });
+        bt_Agregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_AgregarMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel46, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel9Layout.createSequentialGroup()
+                                        .addGap(44, 44, 44)
+                                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel44)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(14, 14, 14))
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addComponent(jLabel42, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addComponent(cb_materialesproductos, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bt_agregarmaterialaProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(tf_tiempoproducto, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_descripcionproducto)
+                            .addComponent(tf_nombreproducto)))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(163, 163, 163)
+                        .addComponent(bt_Agregar)))
+                .addContainerGap(41, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel46)
+                .addGap(28, 28, 28)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel42)
+                    .addComponent(tf_nombreproducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel43)
+                    .addComponent(tf_descripcionproducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel44)
+                    .addComponent(tf_tiempoproducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(cb_materialesproductos)
+                        .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(bt_agregarmaterialaProducto))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                .addComponent(bt_Agregar)
+                .addGap(37, 37, 37))
+        );
+
+        PanelProducto.addTab("Nuevo Producto", jPanel9);
+
+        jLabel47.setFont(new java.awt.Font("Agency FB", 0, 24)); // NOI18N
+        jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel47.setText("Eliminar un Producto");
+
+        ta_eliminarProductos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Nombre", "Descripcion", "Tiempo de Ensamblaje"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane7.setViewportView(ta_eliminarProductos);
+
+        jButton5.setText("Eliminar");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel47, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(168, 168, 168)
+                        .addComponent(jButton5))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel47)
+                .addGap(40, 40, 40)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jButton5)
+                .addContainerGap(115, Short.MAX_VALUE))
+        );
+
+        PanelProducto.addTab("Eliminar", jPanel10);
+
+        jLabel48.setFont(new java.awt.Font("Agency FB", 0, 24)); // NOI18N
+        jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel48.setText("Reestablecer Valores ");
+
+        cb_modficarProducto.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cb_modficarProductoItemStateChanged(evt);
+            }
+        });
+
+        jLabel49.setText("Producto");
+
+        jLabel50.setText("Nombre");
+
+        jLabel51.setText("Descripcion");
+
+        jLabel52.setText(" ");
+
+        tf_descriProductomodif.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_descriProductomodifActionPerformed(evt);
+            }
+        });
+
+        jLabel53.setText("Tiempo ensamblaje");
+
+        jLabel54.setText("Materiales");
+
+        bt_reelegirMateriales.setText("Reelegir Materiales");
+
+        jToggleButton4.setText("Restablecer");
+        jToggleButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jToggleButton4MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel48, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_tiempoProductomodif, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_nombreProductomodif, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(158, 158, 158))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tf_descriProductomodif, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cb_modficarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(bt_reelegirMateriales)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(144, 144, 144)
+                .addComponent(jToggleButton4)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel48)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cb_modficarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel49))
+                .addGap(14, 14, 14)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel50)
+                    .addComponent(tf_nombreProductomodif, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tf_tiempoProductomodif, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel53))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tf_descriProductomodif, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel51))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel54)
+                    .addComponent(bt_reelegirMateriales, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel52)
+                .addGap(18, 18, 18)
+                .addComponent(jToggleButton4)
+                .addContainerGap(81, Short.MAX_VALUE))
+        );
+
+        PanelProducto.addTab("Modificar", jPanel11);
+
+        javax.swing.GroupLayout ventanaProductosLayout = new javax.swing.GroupLayout(ventanaProductos.getContentPane());
+        ventanaProductos.getContentPane().setLayout(ventanaProductosLayout);
+        ventanaProductosLayout.setHorizontalGroup(
+            ventanaProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelProducto, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+        ventanaProductosLayout.setVerticalGroup(
+            ventanaProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(PanelProducto, javax.swing.GroupLayout.Alignment.TRAILING)
+        );
+
+        jLabel57.setFont(new java.awt.Font("Agency FB", 0, 18)); // NOI18N
+        jLabel57.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel57.setText("Agregar Orden a la Linea de Produccion");
+
+        jToggleButton1.setText("Producir");
+
+        javax.swing.GroupLayout Ventana_OrdenLayout = new javax.swing.GroupLayout(Ventana_Orden.getContentPane());
+        Ventana_Orden.getContentPane().setLayout(Ventana_OrdenLayout);
+        Ventana_OrdenLayout.setHorizontalGroup(
+            Ventana_OrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel57, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(Ventana_OrdenLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(cb_ordenar, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jToggleButton1)
+                .addContainerGap(93, Short.MAX_VALUE))
+        );
+        Ventana_OrdenLayout.setVerticalGroup(
+            Ventana_OrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Ventana_OrdenLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel57)
+                .addGap(51, 51, 51)
+                .addGroup(Ventana_OrdenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cb_ordenar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jToggleButton1))
+                .addContainerGap(53, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("Principal"); // NOI18N
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Panel_Producto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Panel_ProductoMouseClicked(evt);
+            }
+        });
 
         jLabel2.setText("Productos");
 
@@ -591,9 +959,9 @@ public class Principal extends javax.swing.JFrame {
         Panel_ProductoLayout.setHorizontalGroup(
             Panel_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_ProductoLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(40, 40, 40)
                 .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         Panel_ProductoLayout.setVerticalGroup(
             Panel_ProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -603,7 +971,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(Panel_Producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 110, -1));
+        getContentPane().add(Panel_Producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 140, -1));
 
         Panel_empleados.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -618,9 +986,9 @@ public class Principal extends javax.swing.JFrame {
         Panel_empleadosLayout.setHorizontalGroup(
             Panel_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_empleadosLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(39, 39, 39)
                 .addComponent(jLabel3)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         Panel_empleadosLayout.setVerticalGroup(
             Panel_empleadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -630,7 +998,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(Panel_empleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 130, -1, -1));
+        getContentPane().add(Panel_empleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 140, -1));
 
         Panel_mterial.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -645,9 +1013,9 @@ public class Principal extends javax.swing.JFrame {
         Panel_mterialLayout.setHorizontalGroup(
             Panel_mterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_mterialLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(43, 43, 43)
                 .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         Panel_mterialLayout.setVerticalGroup(
             Panel_mterialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -657,7 +1025,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(Panel_mterial, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, 110, -1));
+        getContentPane().add(Panel_mterial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 140, -1));
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Linea de Ensamblaje");
@@ -666,20 +1034,53 @@ public class Principal extends javax.swing.JFrame {
         Panel_lineaEnsablaje.setLayout(Panel_lineaEnsablajeLayout);
         Panel_lineaEnsablajeLayout.setHorizontalGroup(
             Panel_lineaEnsablajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
         );
         Panel_lineaEnsablajeLayout.setVerticalGroup(
             Panel_lineaEnsablajeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_lineaEnsablajeLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel5)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(Panel_lineaEnsablaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 130, -1, -1));
+        getContentPane().add(Panel_lineaEnsablaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 140, -1));
+
+        jLabel55.setFont(new java.awt.Font("Agency FB", 0, 48)); // NOI18N
+        jLabel55.setForeground(new java.awt.Color(204, 0, 0));
+        jLabel55.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel55.setText("TRUMP TOWER");
+        getContentPane().add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(4, 30, 730, -1));
+
+        Panel_mterial1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Panel_mterial1MouseClicked(evt);
+            }
+        });
+
+        jLabel56.setText("Crear Orden");
+
+        javax.swing.GroupLayout Panel_mterial1Layout = new javax.swing.GroupLayout(Panel_mterial1);
+        Panel_mterial1.setLayout(Panel_mterial1Layout);
+        Panel_mterial1Layout.setHorizontalGroup(
+            Panel_mterial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Panel_mterial1Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jLabel56)
+                .addContainerGap(42, Short.MAX_VALUE))
+        );
+        Panel_mterial1Layout.setVerticalGroup(
+            Panel_mterial1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_mterial1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel56)
+                .addContainerGap())
+        );
+
+        getContentPane().add(Panel_mterial1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 140, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/torretromp_p1/45.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 630));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -789,7 +1190,7 @@ public class Principal extends javax.swing.JFrame {
                     }
 
                 }
-            } catch (Exception e) {
+            } catch (NumberFormatException | HeadlessException e) {
                 JOptionPane.showMessageDialog(this, "No se admiten letras en la serie del material");
             }
         } else {
@@ -1170,6 +1571,246 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton2MouseClicked
 
+    private void tf_descriProductomodifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_descriProductomodifActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_descriProductomodifActionPerformed
+
+    private void Panel_ProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_ProductoMouseClicked
+        this.ventanaProductos.pack();
+        this.ventanaProductos.setLocationRelativeTo(this);
+        this.ventanaProductos.setVisible(true);
+        this.cb_materialesproductos.setModel(new DefaultComboBoxModel());
+        Nodo temporallista = listamateriales.getHead();
+        if (temporallista == null) {
+            this.cb_materialesproductos.setModel(new DefaultComboBoxModel());
+        } else {
+            int contador = 0;
+            while (temporallista != null) {
+                contador++;
+                temporallista = temporallista.getNext();
+            }
+            temporallista = listamateriales.getHead();
+            for (int i = 0; i <= contador; i++) {
+                if (temporallista != null) {
+                    this.cb_materialesproductos.addItem(((Material) temporallista.getData()).getNombre());
+                    temporallista = temporallista.getNext();
+                }
+            }
+
+        }
+
+    }//GEN-LAST:event_Panel_ProductoMouseClicked
+
+    private void bt_agregarmaterialaProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_agregarmaterialaProductoActionPerformed
+        int indice = this.cb_materialesproductos.getSelectedIndex();
+        Nodo temp = listamateriales.getHead();
+        int contador = -1;
+        boolean agrego = false;
+        while (temp != null) {
+            contador++;
+            if (contador == indice) {
+                Nodo tempo = this.materialesProductos.getHead();
+                if (tempo == null) {
+                    materialesProductos.setHead(temp);
+                    JOptionPane.showMessageDialog(null, "Material agregado");
+                } else {
+                    while (tempo.getNext() != null) {
+                        tempo = tempo.getNext();
+                    }
+
+                    tempo.setNext(temp);
+                    JOptionPane.showMessageDialog(null, "Material agregado");
+                    agrego = true;
+                    break;
+                }
+            }
+            if (agrego) {
+                break;
+            } else {
+                temp = temp.getNext();
+            }
+        }
+
+    }//GEN-LAST:event_bt_agregarmaterialaProductoActionPerformed
+
+    private void bt_AgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_AgregarMouseClicked
+        String nombre, descripcion;
+        int tiempoensamblar;
+        if (!(this.tf_nombreproducto.getText().equals("") || this.tf_descripcionproducto.getText().equals("")
+                || this.tf_tiempoproducto.getText().equals(""))) {
+            if (materialesProductos.getHead() != null) {
+                nombre = this.tf_nombreproducto.getText();
+                descripcion = this.tf_descripcionproducto.getText();
+                tiempoensamblar = Integer.parseInt(this.tf_tiempoproducto.getText());
+                Producto nuevoproducto = new Producto(materialesProductos, nombre, descripcion, tiempoensamblar);
+                Nodo nuevoproductonodo = new Nodo(null, null, nuevoproducto);
+                if (catalogo.getHead() == null) {
+                    System.out.println("se fue a la cabeza del catalogo");
+                    limpiaragregarproducto();
+                    catalogo.setHead(nuevoproductonodo);
+                } else {
+                    Nodo temp = catalogo.getHead();
+                    int contador = -1;
+                    while (temp.getNext() != null) {
+                        contador++;
+                        temp = temp.getNext();
+                    }
+                    temp.setNext(nuevoproductonodo);
+                    System.out.println("se fue a la cola del catalogo");
+                    limpiaragregarproducto();
+
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "no ha agregado materiales al producto");
+            }
+        }
+
+    }//GEN-LAST:event_bt_AgregarMouseClicked
+    private void limpiaragregarproducto() {
+        this.tf_nombreproducto.setText("");
+        this.tf_descripcionproducto.setText("");
+        this.tf_tiempoproducto.setText("");
+        this.materialesProductos = new Lista();
+    }
+
+    private void refrescartablaeliminarproducto() {
+        modelotablaProductos = new DefaultTableModel();
+        modelotablaProductos.addColumn("nombre");
+        modelotablaProductos.addColumn("Descripcion");
+        modelotablaProductos.addColumn("Tiempo de Ensamblaje");
+        Object datos[] = new Object[3];
+        int contador = -1;
+        if (catalogo.getHead() != null) {
+            Nodo temporallista = catalogo.getHead();
+            while (temporallista != null) {
+                contador++;
+                temporallista = temporallista.getNext();
+            }
+            System.out.println("contador" + contador);
+            temporallista = catalogo.getHead();
+            for (int i = 0; i <= contador; i++) {
+                System.out.println("agrgando a table ");
+                datos[0] = ((Producto) temporallista.getData()).getNombre();
+                datos[1] = ((Producto) temporallista.getData()).getDescripcion();
+                datos[2] = Integer.toString(((Producto) temporallista.getData()).getTiempoensamblar());
+                this.modelotablaProductos.addRow(datos);
+                temporallista = temporallista.getNext();
+            }
+            //no salen todos en la tabla
+            this.ta_eliminarProductos.setModel(modelotablaProductos);
+        } else {
+            System.out.println("catalogo vacio");
+            this.ta_eliminarProductos.setModel(modelotablaProductos);
+        }
+
+    }
+
+    private void actualicbmodifproduc() {
+        this.cb_modficarProducto.setModel(new DefaultComboBoxModel());
+        Nodo temporallista = catalogo.getHead();
+        if (temporallista == null) {
+            this.cb_modficarProducto.setModel(new DefaultComboBoxModel());
+        } else {
+            int contador = 0;
+            while (temporallista != null) {
+                contador++;
+                temporallista = temporallista.getNext();
+            }
+            temporallista = catalogo.getHead();
+            for (int i = 0; i <= contador; i++) {
+                if (temporallista != null) {
+                    this.cb_modficarProducto.addItem(((Producto) temporallista.getData()).getNombre());
+                    temporallista = temporallista.getNext();
+                }
+            }
+
+        }
+
+    }
+    private void PanelProductoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_PanelProductoStateChanged
+        switch (this.PanelProducto.getSelectedIndex()) {
+            case 0:
+                materialesProductos = new Lista();
+                break;
+            case 1:
+                refrescartablaeliminarproducto();
+                break;
+            case 2:
+                actualicbmodifproduc();
+                break;
+            default:
+                break;
+        }
+    }//GEN-LAST:event_PanelProductoStateChanged
+
+    private void bt_AgregarStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_bt_AgregarStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_AgregarStateChanged
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        int indicematerialeliminar = this.ta_eliminarProductos.getSelectedRow();
+        if (indicematerialeliminar != -1) {
+            catalogo.delete(indicematerialeliminar);
+            this.actualicbmodifproduc();
+            refrescartablaeliminarproducto();
+
+        }
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void cb_modficarProductoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_modficarProductoItemStateChanged
+        int contador = 0, indice = this.cb_modficarProducto.getSelectedIndex();
+        Nodo tempolista = catalogo.getHead();
+
+        while (tempolista != null) {
+            if (contador == indice) {
+                this.tf_nombreProductomodif.setText(((Producto) tempolista.getData()).getNombre());
+                this.tf_descriProductomodif.setText(((Producto) tempolista.getData()).getDescripcion());
+                this.tf_tiempoProductomodif.setText(Integer.toString(((Producto) tempolista.getData()).getTiempoensamblar()));
+                break;
+            }
+            contador++;
+            tempolista = tempolista.getNext();
+        }
+    }//GEN-LAST:event_cb_modficarProductoItemStateChanged
+
+    private void jToggleButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton4MouseClicked
+        int indice = this.cb_modficarProducto.getSelectedIndex();
+        Nodo tempolista = catalogo.getHead();
+        int contador = 0;
+        while (tempolista != null) {
+            if (contador == indice) {
+                if (!(this.tf_nombreProductomodif.getText().equals(" ") || this.tf_descriProductomodif.getText().equals(" ")
+                        || this.tf_tiempoProductomodif.getText().equals(" "))) {
+                    ((Producto) tempolista.getData()).setNombre(this.tf_nombreProductomodif.getText());
+                    ((Producto) tempolista.getData()).setDescripcion(this.tf_descriProductomodif.getText());
+
+                    try {
+                        ((Producto) tempolista.getData()).setTiempoensamblar(Integer.parseInt(this.tf_tiempoProductomodif.getText()));
+                    } catch (Exception e) {
+                        JOptionPane.showMessageDialog(null, "¡No meta letras donde requiere numeros!");
+                        contador--;
+                    }
+                    JOptionPane.showMessageDialog(null, "¡Modificado!");
+                    this.tf_nombreProductomodif.setText("");
+                    this.tf_descriProductomodif.setText("");
+                    this.tf_tiempoProductomodif.setText("");
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "¡Error!, hay campos vacios");
+                }
+
+            }
+            contador++;
+            tempolista = tempolista.getNext();
+        }
+    }//GEN-LAST:event_jToggleButton4MouseClicked
+
+    private void Panel_mterial1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_mterial1MouseClicked
+        this.Ventana_Orden.pack();
+        this.Ventana_Orden.setLocationRelativeTo(this);
+        this.Ventana_Orden.setVisible(true);
+    }//GEN-LAST:event_Panel_mterial1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1184,16 +1825,24 @@ public class Principal extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Principal.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -1208,10 +1857,12 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Cb_materialamodificar;
     private javax.swing.JTabbedPane PanelEmpleados;
+    private javax.swing.JTabbedPane PanelProducto;
     private javax.swing.JPanel Panel_Producto;
     private javax.swing.JPanel Panel_empleados;
     private javax.swing.JPanel Panel_lineaEnsablaje;
     private javax.swing.JPanel Panel_mterial;
+    private javax.swing.JPanel Panel_mterial1;
     private javax.swing.JTabbedPane PaneldePaneles;
     private javax.swing.JTextArea Ta_descripcionmaterial;
     private javax.swing.JTextArea Ta_descripcionmaterialmodif;
@@ -1223,13 +1874,21 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField Tf_nombrematerial;
     private javax.swing.JTextField Tf_nombrematerialmodif;
     private javax.swing.JDialog Ventana_Materiales;
+    private javax.swing.JDialog Ventana_Orden;
     private javax.swing.JDialog Vnetana_Empleados;
+    private javax.swing.JToggleButton bt_Agregar;
     private javax.swing.JToggleButton bt_agregarempleado;
+    private javax.swing.JButton bt_agregarmaterialaProducto;
+    private javax.swing.JToggleButton bt_reelegirMateriales;
     private javax.swing.JButton btn_eliminarmaterial;
+    private javax.swing.JComboBox<String> cb_materialesproductos;
+    private javax.swing.JComboBox<String> cb_modficarProducto;
     private javax.swing.JComboBox<String> cb_modficarempleado;
+    private javax.swing.JComboBox<String> cb_ordenar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1266,12 +1925,30 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1279,31 +1956,44 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JLabel labelerroragregarmaterial;
+    private javax.swing.JTable ta_eliminarProductos;
     private javax.swing.JTable ta_eliminarempleados;
     private javax.swing.JTable tabla_eliminarmateriales;
     private javax.swing.JTable tablamaterialver;
+    private javax.swing.JTextField tf_descriProductomodif;
+    private javax.swing.JTextField tf_descripcionproducto;
     private javax.swing.JTextField tf_direccionempleadomodif;
     private javax.swing.JTextField tf_direccionempleados;
     private javax.swing.JTextField tf_edadempleadomodif;
     private javax.swing.JTextField tf_edadempleados;
     private javax.swing.JTextField tf_identidadempleadomodif;
     private javax.swing.JTextField tf_identidadempleados;
+    private javax.swing.JTextField tf_nombreProductomodif;
     private javax.swing.JTextField tf_nombreempleadomodif;
     private javax.swing.JTextField tf_nombreempleados;
+    private javax.swing.JTextField tf_nombreproducto;
     private javax.swing.JTextField tf_salarioempleado;
     private javax.swing.JTextField tf_salarioempleadomodif;
+    private javax.swing.JTextField tf_tiempoProductomodif;
+    private javax.swing.JTextField tf_tiempoproducto;
+    private javax.swing.JDialog ventanaProductos;
     // End of variables declaration//GEN-END:variables
     MaterialesListaPilas listamateriales = new MaterialesListaPilas();
     ColaEmpleados colaempleados = new ColaEmpleados();
     Lista listaempleados = new Lista();
+    Lista materialesProductos = null;
     CatalogodeProductosTDALinkList catalogo = new CatalogodeProductosTDALinkList();
-    DefaultTableModel modelotablaaeliminar, modelotablaempleados;
+    DefaultTableModel modelotablaaeliminar, modelotablaempleados, modelotablaProductos;
 }

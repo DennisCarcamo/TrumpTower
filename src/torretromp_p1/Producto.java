@@ -2,45 +2,45 @@ package torretromp_p1;
 
 public class Producto {
 
-    Nodo headlistademateriales;
-    String nombre, descripcion, marca;
+    Lista headlistademateriales;
+    String nombre, descripcion;
     int tiempoensamblar;
 
     public Producto() {
     }
 
-    public Producto(Nodo headlistademateriales, String nombre, String descripcion, String marca, int tiempoensamblar) {
+    public Producto(Lista headlistademateriales, String nombre, String descripcion, int tiempoensamblar) {
         this.headlistademateriales = headlistademateriales;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.marca = marca;
+
         this.tiempoensamblar = tiempoensamblar;
     }
 
     public void setHead(Nodo uncomingnode) {
         if (this.headlistademateriales == null) {
-            this.headlistademateriales = uncomingnode;
+            this.headlistademateriales.setHead(uncomingnode);
         } else {
-            uncomingnode.setNext(headlistademateriales);
-            this.headlistademateriales = uncomingnode;
+            uncomingnode.setNext(headlistademateriales.getHead());
+            headlistademateriales.setHead(uncomingnode.getNext());
         }
     }
 
     public Nodo getHead() {
-        return this.headlistademateriales;
+        return headlistademateriales.getHead();
     }
 
     public void insert(int position, Material value) {
         if (position == 0) {
-            Nodo temporal = new Nodo(null,null,value);
-            headlistademateriales = temporal;
+            Nodo temporal = new Nodo(null, null, value);
+            headlistademateriales.setHead(temporal);
         } else {
-            Nodo headtemp = headlistademateriales;
+            Nodo headtemp = headlistademateriales.getHead();
             int contador = 0;
             while (headtemp.getNext() != null) {
                 contador++;
                 if (contador == position) {
-                    Nodo nodoinsertar = new Nodo(null,null, value);
+                    Nodo nodoinsertar = new Nodo(null, null, value);
                     nodoinsertar.setNext(headtemp.getNext());
                     headtemp.setNext(nodoinsertar);
                     break;
@@ -52,7 +52,7 @@ public class Producto {
     }
 
     public Material at(int position) {
-        Nodo temporal = this.headlistademateriales;
+        Nodo temporal = this.headlistademateriales.getHead();
         int contador = -1;
         Material returnvalue = null;
         while (temporal != null) {
@@ -82,11 +82,11 @@ public class Producto {
         
     }*/
     public Nodo getHeadlistademateriales() {
-        return headlistademateriales;
+        return headlistademateriales.getHead();
     }
 
     public void setHeadlistademateriales(Nodo headlistademateriales) {
-        this.headlistademateriales = headlistademateriales;
+        this.headlistademateriales.setHead(headlistademateriales);
     }
 
     public String getNombre() {
@@ -103,14 +103,6 @@ public class Producto {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
     }
 
     public int getTiempoensamblar() {

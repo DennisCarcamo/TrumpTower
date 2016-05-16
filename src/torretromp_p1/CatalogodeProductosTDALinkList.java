@@ -37,7 +37,7 @@ public class CatalogodeProductosTDALinkList {
 
     public void insert(int position, Producto prod) {
         if (position == 0) {
-            Nodo temporal = new Nodo(null,null, prod);
+            Nodo temporal = new Nodo(null, null, prod);
             head = temporal;
         } else {
             Nodo headtemp = head;
@@ -45,7 +45,7 @@ public class CatalogodeProductosTDALinkList {
             while (headtemp.getNext() != null) {
                 contador++;
                 if (contador == position) {
-                    Nodo nodoinsertar = new Nodo(null,null, prod);
+                    Nodo nodoinsertar = new Nodo(null, null, prod);
                     nodoinsertar.setNext(headtemp.getNext());
                     headtemp.setNext(nodoinsertar);
                     break;
@@ -74,6 +74,28 @@ public class CatalogodeProductosTDALinkList {
         }
 
         return returnvalue;
+    }
+
+    public void delete(int posicion) {
+        if (posicion == 0) {
+            head = head.getNext();
+        } else if (posicion == 1) {
+            Nodo temp = head;
+            temp = temp.getNext();
+            temp = temp.getNext();
+            head.setNext(temp);
+        } else {
+            int contador = 0;
+            Nodo temp = head;
+            while (contador < posicion - 1) {
+                temp = temp.getNext();
+                contador++;
+            }
+            Nodo temp2 = temp.getNext();
+            Nodo temp3 = temp2.getNext();
+            temp.setNext(temp3);
+        }
+
     }
 
     /*  public void concat(Lista uncominglist) {
