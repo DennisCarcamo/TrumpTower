@@ -13,11 +13,11 @@ public class MaterialesListaPilas {
         return this.size;
     }
 
-    public Material pop() {
+    public Nodo pop() {
         Nodo temporal = this.head;
         head = head.getNext();
         size--;
-        return (Material) temporal.getData();
+        return temporal;
     }
 
     public void push(Material material) {
